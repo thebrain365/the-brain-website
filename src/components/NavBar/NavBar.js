@@ -33,13 +33,13 @@ const NavBar = () => {
             bottom: 'auto',
             duration: 0.6,
             ease: 'sine.inOut',
-            boxShadow: '0px 0px 150px 30px #010101ff'
+            // boxShadow: '0px 0px 150px 30px #010101ff'
          }, 0)
          .to('.menu-wrapper', {
             bottom: 'auto',
             duration: 0.01,
             ease: 'sine.inOut'
-         }, '>0')
+         }, 0)
 
          // Do reverse
          .reverse()
