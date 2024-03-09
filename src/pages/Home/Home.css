@@ -8,24 +8,38 @@
 /* --------------------------- Welcome Section */
 .welcome-section {
    position: relative;
-}
-
-.welcome-section-bg {
-   position: absolute;
-   top: 0px;
-   left: 0px;
-   width: 100%;
-   z-index: -1;
+   padding-top: 40px;
+   padding-bottom: 60px;
+   background-color: #010101;
 }
 
 .welcome-message {
    font-family: 'roboto';
    font-weight: 900;
-   font-size: 4em;
-   padding-top: 50px;
-   text-shadow: 5px 5px 6px #00000079;
+   font-size: 20px;
+   color: #000000;
+   text-shadow: 0px 0px 10px #f5f5f5;
    text-align: center;
+   width: 300px;
+   margin: 0px auto;
+   padding: 30px;
+   transform: rotateZ(-2deg);
+   background: linear-gradient(225deg, #00c8ff, #ae00ff);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   box-shadow: 5px -5px 20px 0px inset #0f0f0faa, 0px 0px 30px 10px #380fc08d;
+   border-start-start-radius: 30px;
+   border-end-end-radius: 30px;
 }
+
+.welcome-message span {
+   font-size: 50px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+
 
 @media (min-width: 480px) {
    .welcome-section-bg {

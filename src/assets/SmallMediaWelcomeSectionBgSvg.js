@@ -1,6 +1,6 @@
 const SmallMediaWelcomeSectionBgSvg = () => {
    return (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 788" fill="none">
+      <svg id="small-media" filter="url(#blurry)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 788" preserveAspectRatio="xMinYMin meet" fill="red">
          <g id="small-media-welcome-section-bg" clip-path="url(#clip0_156_36)">
             <rect width="393" height="788" fill="url(#paint0_linear_156_36)" fill-opacity="0.85"/>
             <g id="Vector 3" filter="url(#filter0_di_156_36)">
@@ -8,6 +8,9 @@ const SmallMediaWelcomeSectionBgSvg = () => {
             </g>
          </g>
          <defs>
+            <filter id="blurry">
+               <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+            </filter>
             <filter id="filter0_di_156_36" x="67" y="149" width="351.471" height="236.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
