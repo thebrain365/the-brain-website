@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-.home-container {
-   position: relative;
-   height: 100vh;
+#home-container {
+   background-color: #010101;
 }
 
 /* --------------------------- Welcome Section */
@@ -10,7 +7,7 @@
    position: relative;
    padding-top: 40px;
    padding-bottom: 60px;
-   background-color: #010101;
+   /* background-color: #010101; */
 }
 
 .welcome-message {
@@ -28,7 +25,7 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   box-shadow: 5px -5px 20px 0px inset #0f0f0faa, 0px 0px 30px 10px #380fc08d;
+   box-shadow: 5px -5px 20px 0px inset #0f0f0faa, 0px 0px 25px 12px #380fc08d;
    border-start-start-radius: 30px;
    border-end-end-radius: 30px;
 }
@@ -39,7 +36,90 @@
    padding-bottom: 5px;
 }
 
+.intro {
+   position: relative;
+   padding-top: 20px;
+   /* background-color: #000000; */
+   font-family: roboto;
+}
 
+.intro .intro-section-bg {
+   position: absolute;
+   right: 0px;
+   top: 25%;
+   /* z-index: 1; */
+   width: 75%;
+}
+
+.intro h3 {
+   text-align: center;
+   font-size: 24px;
+   margin: 0px 45px;
+   padding: 17px;
+   color: #000000;
+   background: linear-gradient(225deg, #FFF500, #FF7A00);
+   border-radius: 50px;
+}
+
+.intro p {
+   font-size: 22px;
+   font-weight: 500;
+   line-height: 2em;
+   word-spacing: 0.5px;
+   margin: 0px 40px;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   color: #00c8ff;
+   z-index: 1;
+   column-count: 1;
+   column-fill: balance;
+   
+}
+
+.intro p.p1 {
+   border-bottom: 1px solid #FFF500;
+}
+
+.latest-blogs {
+   background: violet;
+   text-align: center;
+   padding-top: 20px;
+   padding-bottom: 50px;
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+.latest-blogs div {
+   padding-top: 40px;
+}
+
+.latest-blogs div p {
+   padding-top: 15px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+.services {
+   background-color: #FF7A00;
+   text-align: center;
+   padding-top: 20px;
+   padding-bottom: 50px;
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+.services div {
+   padding-top: 40px;
+}
+
+.services div p {
+   padding-top: 15px;
+}
+
+.services div ul {
+   text-align: start;
+}
 
 @media (min-width: 480px) {
    .welcome-section-bg {
