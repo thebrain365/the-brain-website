@@ -5,6 +5,8 @@ import App from './App';
 import Home from './pages/Home/Home';
 import Blogs from './pages/Blogs/Blogs';
 import Services from './pages/Services/Services';
+import AboutMe from './pages/AboutMe/AboutMe';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -12,6 +14,8 @@ const router = createBrowserRouter(
          <Route index element={ <Home /> } />
          <Route path='services' element={ <Services /> } />
          <Route path='blogs' element={ <Blogs /> } />
+         <Route path='aboutme' element={ <AboutMe /> } />
+         <Route path='portfolio' element={ <Portfolio /> } />
       </Route>
    )
 )

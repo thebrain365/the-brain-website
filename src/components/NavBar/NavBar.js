@@ -4,6 +4,7 @@ import MenuCircles from '../../assets/MenuCircles';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(useGSAP)
 
@@ -58,7 +59,7 @@ const NavBar = () => {
       <header ref={ header }>
          <nav className='navbar'>
             <div className='logo-container'>
-               <BrainLogoSvg />
+               <Link to="/" onClick={ () => { !tl.current.reversed() ? handleMenuClicked() : console.log() } } ><BrainLogoSvg /></Link>
             </div>
 
             <h1 className='nav-title'>
@@ -80,10 +81,11 @@ const NavBar = () => {
 
          <menu
             className='menu'>
-            <li className='menu-items' >Services</li>
-            <li className='menu-items' >Blogs</li>
-            <li className='menu-items' >About Me</li>
-            <li className='menu-items' >Get In Touch</li>
+               <Link to="/services" className='menu-items' onClick={ handleMenuClicked } ><li>Services</li></Link>
+               <Link to="/blogs" className='menu-items' onClick={ handleMenuClicked } ><li>Blogs</li></Link>
+               <Link to="/portfolio" className='menu-items' onClick={ handleMenuClicked } ><li>Portfolio</li></Link>
+               <Link to="/aboutme" className='menu-items' onClick={ handleMenuClicked } ><li>About Me</li></Link>
+               <Link to="" className='menu-items' onClick={ handleMenuClicked } ><li>Get In Touch</li></Link>
          </menu>
       
       </header>

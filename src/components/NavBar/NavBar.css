@@ -1,6 +1,4 @@
-/* -------------------------------- Navigation Tab */
-
-/*  NavBar and Header */
+/* ---------------- NavBar and Header ---------------- */
 
 header {
    position: fixed;
@@ -20,12 +18,8 @@ header {
    z-index: 2;
 }
 
-/* ------------------ */
 
-/* ------------- Logo */
-
-.logo-container {
-}
+/* ---------------- Logo ---------------- */
 
 .brain-logo {
    display: inline-block;
@@ -33,10 +27,7 @@ header {
    overflow: visible;
 }
 
-/* ------------------ */
-
-
-/* ------------ Title */
+/* ---------------- Title ---------------- */
 
 .nav-title {
    display: inline-block;
@@ -47,10 +38,7 @@ header {
    flex-grow: 1;
 }
 
-/* ------------------ */
-
-
-/* ------------- Menu */
+/* ---------------- Menu ---------------- */
 
 .menu-wrapper {
    position: absolute;
@@ -105,9 +93,6 @@ header {
    box-sizing: border-box;
 }
 
-/* ------------------ */
-
-
 /* ----------------------------------------------- */
 
 
@@ -122,7 +107,14 @@ header {
 }
 
 @media (min-width: 960px) {
-   
+   .logo-container {
+      flex-grow: 1;
+   }
+
+   .nav-title {
+      flex-grow: 0;
+      margin-right: 22px;
+   }
 }
 
 @media (min-width: 1200px) {
