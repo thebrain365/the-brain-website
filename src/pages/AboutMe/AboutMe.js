@@ -1,27 +1,295 @@
 import './AboutMe.css'
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const AboutMe = () => {
+
+   useGSAP(() => {
+      const mm = gsap.matchMedia()
+
+      mm.add('(max-width: 479px)', () => {
+         gsap.set(['#location h2', '#journey h2', '#where-to-next h2', '#interests h2', '#qoutes h2', '.p1', '.p2', '.p3'], {
+            opacity: 0,
+            top: '300px'
+         })
+
+         gsap.set('#qoutes ul', {
+            rotationX: '90deg',
+            top: '300px',
+            opacity: 0,
+         })
+
+         // Location Section
+         gsap.to('#location h2', {
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+         gsap.to('#location .p1', {
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2,
+         })
+
+         // Journey Section
+         gsap.to('#journey h2', {
+            scrollTrigger: {
+               trigger: '#journey h2',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2,
+         })
+         gsap.to('#journey .p1', {
+            scrollTrigger: {
+               trigger: '#journey .p1',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+         gsap.to('#journey .p2', {
+            scrollTrigger: {
+               trigger: '#journey .p2',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+         gsap.to('#journey .p3', {
+            scrollTrigger: {
+               trigger: '#journey .p3',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+
+         // Where To Next Section
+         gsap.to('#where-to-next h2', {
+            scrollTrigger: {
+               trigger: '#where-to-next h2',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+         gsap.to('#where-to-next .p1', {
+            scrollTrigger: {
+               trigger: '#where-to-next .p1',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+         gsap.to('#where-to-next .p2', {
+            scrollTrigger: {
+               trigger: '#where-to-next .p2',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+         gsap.to('#where-to-next .p3', {
+            scrollTrigger: {
+               trigger: '#where-to-next .p3',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+
+         // Interests Section
+         gsap.to('#interests h2', {
+            scrollTrigger: {
+               trigger: '#interests h2',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+         gsap.to('#interests .p1', {
+            scrollTrigger: {
+               trigger: '#interests .p1',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+
+         // Qoutes Section
+         gsap.to('#qoutes h2', {
+            scrollTrigger: {
+               trigger: '#qoutes h2',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            ease: 'sine.inOut',
+            duration: 1.2
+         })
+         gsap.to('#qoutes ul', {
+            scrollTrigger: {
+               trigger: '#qoutes ul',
+               start: 'top bottom+=75px',
+               toggleActions: "play none none reverse",
+            },
+            opacity: 1,
+            top: '0',
+            rotateX: '0deg',
+            ease: 'sine.inOut',
+            duration: 1.2,
+            delay: 1.2
+         })
+      })
+   })
+
    return (
       <div id='aboutme-container'>
          <section id='profile' >
-            <img id="muano" src="/muano2.jpg" alt='muano thebrain makhokha' />
+            <img id="muano" src="/muano3.jpg" alt='muano thebrain makhokha' />
             <div id='image-overlay'></div>
             <div id='names' >Muano<br/>Makhokha</div>
          </section>
+
          <section id='bio' >
-            Location
-            Interests
-            Hobbies
-            Favourite qoute
-            Personal values and principles
-            How I got here
-            Where I am looking to go next
-            Passion
-            Fun facts
-            Strengths and weaknesses
+            <div id='location' >
+               <h2>Location</h2>
+               <p className='p1' >
+                  Based in Soweto, Gauteng, South Africa
+               </p>
+            </div>
+
+            <div id='journey' >
+               <h2>How far I've come</h2>
+               <div>
+                  <p className='p1' >
+                     I grew up in Muledane, Thohoyandou and I attended Thohoyandou Technical High School, where I did Mathematics, Physical Sciences, Civil Technology, and Engineering Graphics and Design. I excelled in all of these subjects, and what I liked most about them was that they helped me to become a creative person.
+                  </p>
+                  <p className='p2' >
+                     Because of my deep interest in Mathematics, I then pursued my education at the University of the Witwatersrand where I majored in Mathematics and Computer Science. I had never done anything related to computers before and had no clue what it was all about. Looking back at it, it's one of the best decisions I've ever made.
+                  </p>
+                  <p className='p3' >
+                     On my first year I did a lot of introduction stuff like binaries, algorithms and data structures and some basic coding using Python and C++. These weren't really fun at all but I still kept it up. It was in my second year where I really started liking it. I saw what those basics were building up to, and I thought to myself "this whole thing of computers is just pure genius". I loved it and that's when I knew that I would be passionate about this field and a few years later it was so.
+                  </p>
+               </div>
+            </div>
+
+            <div id='where-to-next' >
+               <h2>Where to next</h2>
+               <div>
+                  <p className='p1' >
+                     Along my journey in Computer Science I came across multiple areas that have sparked my interest. Which are Software Engineering, Data Science and Cyber Security. To me, these are very different areas, and the difference I appreciate the most is the process of thinking within each area.
+                  </p>
+                  <p className='p2' >
+                     To most these may be too many skills to focus on, and I agree. But this boils down to my personality. I personally prefer to be a "Jack of all trades". Although my specialty lies in Software Engineering.
+                  </p>
+                  <p className='p3' >
+                     I prefer diversity and having the ability to think and solve problems within different environments. Perhaps, this stems from my desire to be an entreprenuer, where it is common to do everything by yourself, especially in the beginning.
+                  </p>
+               </div>
+            </div>
+
+            <div id='interests' >
+               <h2>Interests</h2>
+               <p className='p1' >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iusto repellendus optio, laborum ut ex quos consequuntur pariatur tempore est.
+               </p>
+            </div>
+
+            <div id='qoutes' >
+               <h2>Favourite quotes</h2>
+               <ul>
+                  <li>
+                     A man who does more than he is paid for... will soon be paid for more than he does.
+                  </li>
+                  <li>
+                     Failing to plan is planning to fail
+                  </li>
+                  <li>
+                     Hard work beats talent if talent doesn't work hard
+                  </li>
+               </ul>
+            </div>
+
+            <p>
+               There is so much to know and learn about me, so if you're interested don't hasitate to reach out.
+            </p>
          </section>
       </div>
    );
 }
  
 export default AboutMe;
+
+            // <div id='work-environment' >
+            //    <div>
+            //       <p>
+            //          I am open to working with different people and organizations. If I had to rank, I would place small businesses at the top. With the current unemployment situation in South Africa and the lack of experience among the youth, I feel that it is important to collaborate with small businesses as much as we can. I see this being beneficial in the following ways.
+            //       </p>
+
+            //       <ul>
+            //          <li>
+            //             Learning Opportunities: Startups often have a dynamic environment where employees wear multiple hats. As a result, you can gain experience in various aspects of a business, allowing for a broader skill set and a more well-rounded professional profile.
+            //          </li>
+            //          <li>
+            //             Responsibilities: Startups typically have smaller teams, providing fresh graduates with the opportunity to take on significant responsibilities early in their careers. This can lead to faster skill development and increased confidence in decision-making.
+            //          </li>
+            //          <li>
+            //             Fast Career Progression: In a startup, there is often a flatter organizational structure, meaning fewer hierarchical layers. This can lead to quicker career progression and more opportunities for advancement, especially for individuals who demonstrate initiative and dedication.
+            //          </li>
+            //          <li>
+            //             Entrepreneurial Experience: Working with a startup exposes you to the entrepreneurial mindset. You can witness firsthand the challenges and rewards of building a business, gaining valuable insights into what it takes to start and grow a company.
+            //          </li>
+            //          <li>
+            //             Flexibility and Agility: Startups are generally more flexible and agile than larger corporations. This flexibility can lead to a more adaptive and dynamic work environment, providing opportunities for you to learn how to navigate and thrive in rapidly changing circumstances.
+            //          </li>
+            //          <li>
+            //             Stock Options and Equity: Some startups offer stock options or equity as part of their compensation packages. While the financial rewards may not be immediate, if the startup succeeds, your equity could become valuable over time, providing an additional incentive for your commitment and hard work.
+            //          </li>
+            //          <li>
+            //             Impactful Work: In a startup, your contributions can have a direct impact on the company's success. This sense of purpose and the ability to see the tangible results of your efforts can be highly motivating and fulfilling.
+            //          </li>
+            //       </ul>
+
+            //       <p>
+            //          It's also important to note that working with startups also comes with its own set of challenges, such as uncertainty, limited resources, and a fast-paced environment. However, for those who thrive in such conditions, the benefits can outweigh the drawbacks, offering a unique and rewarding career experience.
+            //       </p>
+            //    </div>
+            // </div>
