@@ -136,7 +136,8 @@
 
 
 .latest-blogs {
-   background: linear-gradient(0deg, #00c8ffaa 0%, #000000);
+   /* background: linear-gradient(0deg, #00c8ffaa 0%, #000000); */
+   background: #010101;
    color: #e7e7e7;
    text-align: start;
    padding-top: 20px;
@@ -183,7 +184,8 @@
 /* ---------------- Services Section ---------------- */
 
 .services {
-   background: linear-gradient(180deg, #00c8ffaa 0%, #000000);
+   /* background: linear-gradient(180deg, #00c8ffaa 0%, #000000); */
+   background: #010101;
    color: #e7e7e7;
    text-align: center;
    padding-top: 20px;
@@ -209,14 +211,8 @@
 .services div h1 {
    font-size: 25px;
    text-align: center;
-   text-shadow: 0px 0px 15px #000000;
+   text-shadow: 0px 0px 15px #FFF500;
 }
-
-/* .services div p {
-   padding-top: 15px;
-   font-size: 20px;
-   font-weight: 300;
-} */
 
 .services div ul {
    font-size: 20px;

@@ -190,7 +190,7 @@ const Home = () => {
             </div>
 
             <div id='services-2' >
-               <h1>Data Analysis</h1>
+               <h1>Data Analytics</h1>
                <ul>
                   <li>Statistical Analysis</li>
                   <li>Data Visualisation</li>
