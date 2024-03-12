@@ -1,38 +1,241 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-.home-container {
-   position: relative;
-   height: 100vh;
+#home-container {
+   background-color: #010101;
+   z-index: 1;
 }
 
-/* --------------------------- Welcome Section */
+/* ---------------- Home Background ---------------- */
+
+#home-bg {
+   position: relative;
+}
+
+#circle-1 {
+   position: relative;
+   height: 400px;
+   width: 400px;
+   top: 200px;
+   right: -50px;
+   border-radius: 200px;
+   background: #FF6B003a;
+   position: fixed;
+   z-index: 0;
+}
+
+#circle-2 {
+   height: 70px;
+   width: 120px;
+   top: 500px;
+   border-radius: 150px;
+   background: #FF6B003a;
+   position: fixed;
+   z-index: 0;
+}
+
+#square-1 {
+   height: 150px;
+   width: 150px;
+   top: 500px;
+   background: #FF6B003a;
+   position: fixed;
+   z-index: 0;
+}
+
+#square-2 {
+   height: 70px;
+   width: 70px;
+   top: 500px;
+   border-radius: 150px;
+   background: #FF6B003a;
+   position: fixed;
+   z-index: 0;
+}
+
+/* ---------------- Welcome Message Section ---------------- */
+
 .welcome-section {
    position: relative;
-}
-
-.welcome-section-bg {
-   position: absolute;
-   top: 0px;
-   left: 0px;
-   width: 100%;
-   z-index: -1;
+   padding-top: 40px;
+   padding-bottom: 60px;
+   /* background-color: #010101; */
 }
 
 .welcome-message {
-   font-family: 'roboto';
-   font-weight: 900;
-   font-size: 4em;
-   padding-top: 50px;
-   text-shadow: 5px 5px 6px #00000079;
+   font-size: 20px;
+   color: #000000;
+   text-shadow: 0px 0px 10px #f5f5f5;
    text-align: center;
+   width: 300px;
+   margin: 0px auto;
+   padding: 30px;
+   transform: rotateZ(-2deg);
+   background: linear-gradient(225deg, #00c8ff, #ae00ff);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   box-shadow: 5px -5px 20px 0px inset #0f0f0faa, 0px 0px 25px 12px #380fc08d;
+   border-start-start-radius: 30px;
+   border-end-end-radius: 30px;
 }
+
+.welcome-message h1 {
+   font-weight: 500;
+}
+
+.welcome-message span {
+   font-size: 50px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+/* ---------------- Intro Section ---------------- */
+
+
+.intro {
+   position: relative;
+   padding-top: 20px;
+   font-family: roboto;
+}
+
+.intro h3 {
+   text-align: center;
+   font-size: 40px;
+   /* margin: 0px 45px; */
+   padding: 17px;
+   color: transparent;
+   background: linear-gradient(270deg, #FFF500 40%, #FF6B00);
+   background-clip: text;
+   -webkit-background-clip: text;
+}
+
+.intro p {
+   font-size: 22px;
+   font-weight: 300;
+   line-height: 1.8em;
+   text-align: center;
+   word-spacing: 0.5px;
+   margin: 0px 40px;
+   padding-top: 40px;
+   padding-bottom: 50px;
+   color: #00c8ff;
+   z-index: 1;
+   column-count: 1;
+   column-fill: balance;
+   border-bottom: 1px solid #FFF500;   
+}
+
+.intro p#p2 {
+   position: relative;
+}
+
+.intro p#p3 {
+   position: relative;
+   border-bottom: 0px;
+}
+
+/* ---------------- Latest Blogs Section ---------------- */
+
+
+.latest-blogs {
+   /* background: linear-gradient(0deg, #00c8ffaa 0%, #000000); */
+   background: #010101;
+   color: #e7e7e7;
+   text-align: start;
+   padding-top: 20px;
+   padding-bottom: 50px;
+   padding-left: 20px;
+   padding-right: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.latest-blogs h2 {
+   font-size: 40px;
+   text-align: center;
+   color: transparent;
+   background: linear-gradient(270deg, #FFF500 40%, #FF6B00);
+   background-clip: text;
+   -webkit-background-clip: text;
+}
+
+.latest-blogs div {
+   border-radius: 10px;
+   background: #00c8ff5a;
+   margin-top: 40px;
+   padding: 20px 10px;
+   box-shadow: 0px 0px 25px 0px #000000;
+}
+
+.latest-blogs div h1 {
+   font-size: 25px;
+   text-align: center;
+   text-shadow: 0px 0px 10px #000000;
+}
+
+.latest-blogs div p {
+   font-size: 20px;
+   font-weight: 300;
+   padding-top: 15px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+/* ---------------- Services Section ---------------- */
+
+.services {
+   /* background: linear-gradient(180deg, #00c8ffaa 0%, #000000); */
+   background: #010101;
+   color: #e7e7e7;
+   text-align: center;
+   padding-top: 20px;
+   padding-bottom: 50px;
+   padding-left: 40px;
+   padding-right: 40px;
+}
+
+.services h2 {
+   font-size: 40px;
+   text-align: center;
+   color: transparent;
+   background: linear-gradient(270deg, #FFF500 40%, #FF6B00);
+   background-clip: text;
+   -webkit-background-clip: text;
+}
+
+.services div {
+   padding-top: 40px;
+
+}
+
+.services div h1 {
+   font-size: 25px;
+   text-align: center;
+   text-shadow: 0px 0px 15px #FFF500;
+}
+
+.services div ul {
+   font-size: 20px;
+   font-weight: 300;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 0;
+}
+
+.services div ul li {
+   text-align: left;
+   list-style-type: none;
+   padding: 9px;
+   border-bottom: 1px solid #FFF5007a;
+}
+
+
+
+
 
 @media (min-width: 480px) {
    .welcome-section-bg {
       display: none;
    }
 }
-
-
-/* ------------------------------------------- */
-
