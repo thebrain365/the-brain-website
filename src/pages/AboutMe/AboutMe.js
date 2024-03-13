@@ -18,7 +18,7 @@ const AboutMe = () => {
 
          gsap.set('#qoutes ul', {
             rotationX: '90deg',
-            top: '300px',
+            // top: '300px',
             opacity: 0,
          })
 
