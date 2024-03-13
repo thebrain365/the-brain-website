@@ -1,3 +1,5 @@
+import './Services.css'
+
 const Services = () => {
    return (
       <div id='services' >
@@ -16,26 +18,30 @@ const Services = () => {
                As I embark on my professional journey, I am eager to continue learning and growing in this ever-evolving field. With a curious mindset and a passion for innovation, I am confident in my ability to make a meaningful impact as a software engineer, creating transformative digital experiences that enrich the lives of others.
             </p>
             <div>
-               <h2>
-                  My Tech Stack
-               </h2>
-               <h3>Programming Languages</h3>
+               <h3>
+                  Tech Stack
+               </h3>
+               <h4>
+                  Programming Languages
+               </h4>
                <ul>
                   <li>Java</li>
                   <li>JavaScript</li>
                   <li>Python</li>
                   <li>HTML/CSS</li>
                </ul>
-               <h3>Frameworks</h3>
+               <h4>
+                  Frameworks
+               </h4>
                <ul>
                   <li>Spring Framework (including Spring Boot, Spring MVC, Spring Security, Spring Data JPA)</li>
                   <li>Hibernate</li>
                   <li>React.Js</li>
                   <li>Node.js</li>
                </ul>
-               <h3>
+               <h4>
                   Tools and Technology
-               </h3>
+               </h4>
                <ul>
                   <li>Android Studio</li>
                   <li>Green Sock Animation Platform (GSAP)</li>
@@ -47,7 +53,7 @@ const Services = () => {
          </section>
 
          <section id='database-design' >
-            <h2>Database Design and Implementation</h2>
+            <h1>Database Design and Implementation</h1>
             <p>
                I can also design and implement relational databases using ER modeling, advanced data modeling, and SQL. Throughout my coursework and hands-on projects, I've developed an understanding of database architecture, ensuring efficient and scalable solutions. By applying normalization techniques, I can optimize database structures for performance and maintainability, eliminating redundancies and update anomalies.
             </p>
@@ -56,7 +62,7 @@ const Services = () => {
             </p>
          </section>
          <section id='data-analytics' >
-            <h2>Data Analytics</h2>
+            <h1>Data Analytics</h1>
             <p>
                I possess a strong foundation in data analysis, spanning data framing, exploration, interpretation, modeling, and visualization. Through coursework and practical exposure, I've honed my ability to structure datasets effectively, explore patterns and relationships, and derive actionable insights.
             </p>
