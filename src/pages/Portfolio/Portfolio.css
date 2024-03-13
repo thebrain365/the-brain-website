@@ -1,0 +1,12 @@
+#portfolio {
+   font-size: 22px;
+   font-weight: 300;
+   line-height: 1.8em;
+   padding-left: 25px;
+   padding-right: 25px;
+   padding-top: 30px;
+}
+
+#portfolio h1, #portfolio h2, #portfolio h3 {
+   margin: 15px 0px;
+}
