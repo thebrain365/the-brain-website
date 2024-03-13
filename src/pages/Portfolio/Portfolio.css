@@ -5,8 +5,46 @@
    padding-left: 25px;
    padding-right: 25px;
    padding-top: 30px;
+   color: #00c8ff;
 }
 
 #portfolio h1, #portfolio h2, #portfolio h3 {
    margin: 15px 0px;
+   font-weight: 300;
+}
+
+#portfolio #page-title {
+   margin-top: 0px;
+   margin-bottom: 50px;
+   color: transparent;
+   background: linear-gradient(270deg, #FFF500 40%, #FF6B00);
+   background-clip: text;
+   -webkit-background-clip: text;
+}
+
+#education, #internship-programmes, #the-brain-web, #mzansi-rents, #a-travel {
+   border-bottom: 1px solid #FF6B00;
+   padding-bottom: 30px;
+}
+
+#edu-bg-title, #internship-programmes-title, #the-brain-web-title, #mzansi-rents-title, #a-travel-title {
+   border-bottom: 1px solid #FF6B00;
+   padding-bottom: 10px;
+   color: #FF6B00;
+}
+
+#education span {
+   font-size: 19px;
+}
+
+#math h3, #comp h3, #econ-and-fin h3 {
+   color: #FF6B00;
+}
+
+#internship-programmes, #the-brain-web, #mzansi-rents, #a-travel {
+   margin-top: 80px;
+}
+
+.content {
+   display: none;
 }
