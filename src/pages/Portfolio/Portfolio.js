@@ -56,6 +56,7 @@ const Portfolio = () => {
                Educational Background
             </h2>
             <h2
+               id='wits-title'
                onClick={ () => tlWitsContent.current.reversed(!tlWitsContent.current.reversed()) }
                typeof='button'
             >
@@ -91,7 +92,12 @@ const Portfolio = () => {
                </div>
                <div
                   className='up-arrow'
-                  onClick={ () => tlWitsContent.current.reversed(!tlWitsContent.current.reversed()) }
+                  onClick={ 
+                     () => {
+                        document.getElementById('wits-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
+                        tlWitsContent.current.reversed(!tlWitsContent.current.reversed())
+                     }
+                  }
                   typeof='button'
                >
                   <UpArrowSvg />
@@ -104,6 +110,7 @@ const Portfolio = () => {
                Internship Programmes
             </h2>
             <h2
+               id='qyf-title'
                onClick={ () => tlQyfContent.current.reversed(!tlQyfContent.current.reversed()) }
                typeof='button'
             >
@@ -119,7 +126,12 @@ const Portfolio = () => {
                </ul>
                <div
                   className='up-arrow'
-                  onClick={ () => tlQyfContent.current.reversed(!tlQyfContent.current.reversed()) }
+                  onClick={
+                     () => {
+                        document.getElementById('qyf-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
+                        tlQyfContent.current.reversed(!tlQyfContent.current.reversed())
+                     }
+                  }
                   typeof='button'
                >
                   <UpArrowSvg />

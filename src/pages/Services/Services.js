@@ -25,7 +25,7 @@ const Services = () => {
                   Programming Languages
                </h4>
                <ul>
-                  <li>Java</li>
+                  <li>Java EE</li>
                   <li>JavaScript</li>
                   <li>Python</li>
                   <li>HTML/CSS</li>
