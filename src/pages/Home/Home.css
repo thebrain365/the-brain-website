@@ -3,63 +3,16 @@
    z-index: 1;
 }
 
-/* ---------------- Home Background ---------------- */
 
-#home-bg {
-   position: relative;
-}
+/* ---------------- Welcome ---------------- */
 
-#circle-1 {
-   position: relative;
-   height: 400px;
-   width: 400px;
-   top: 200px;
-   right: -50px;
-   border-radius: 200px;
-   background: #FF6B003a;
-   position: fixed;
-   z-index: 0;
-}
-
-#circle-2 {
-   height: 70px;
-   width: 120px;
-   top: 500px;
-   border-radius: 150px;
-   background: #FF6B003a;
-   position: fixed;
-   z-index: 0;
-}
-
-#square-1 {
-   height: 150px;
-   width: 150px;
-   top: 500px;
-   background: #FF6B003a;
-   position: fixed;
-   z-index: 0;
-}
-
-#square-2 {
-   height: 70px;
-   width: 70px;
-   top: 500px;
-   border-radius: 150px;
-   background: #FF6B003a;
-   position: fixed;
-   z-index: 0;
-}
-
-/* ---------------- Welcome Message Section ---------------- */
-
-.welcome-section {
+#welcome {
    position: relative;
    padding-top: 40px;
    padding-bottom: 60px;
-   /* background-color: #010101; */
 }
 
-.welcome-message {
+#welcome-message {
    font-size: 20px;
    color: #000000;
    text-shadow: 0px 0px 10px #f5f5f5;
@@ -77,26 +30,26 @@
    border-end-end-radius: 30px;
 }
 
-.welcome-message h1 {
+#welcome-message h1 {
    font-weight: 500;
 }
 
-.welcome-message span {
+#welcome-message span {
    font-size: 50px;
    padding-top: 5px;
    padding-bottom: 5px;
 }
 
-/* ---------------- Intro Section ---------------- */
+/* ---------------- Intro ---------------- */
 
 
-.intro {
+#introduction {
    position: relative;
    padding-top: 20px;
    font-family: roboto;
 }
 
-.intro h3 {
+#introduction h3 {
    text-align: center;
    font-size: 40px;
    /* margin: 0px 45px; */
@@ -107,7 +60,8 @@
    -webkit-background-clip: text;
 }
 
-.intro p {
+#introduction p {
+   position: relative;
    font-size: 22px;
    font-weight: 300;
    line-height: 1.8em;
@@ -123,19 +77,17 @@
    border-bottom: 1px solid #FFF500;   
 }
 
-.intro p#p2 {
-   position: relative;
+#introduction p#introduction-p2 {
 }
 
-.intro p#p3 {
-   position: relative;
+#introduction p#introduction-p3 {
    border-bottom: 0px;
 }
 
-/* ---------------- Latest Blogs Section ---------------- */
+/* ---------------- Latest Blogs ---------------- */
 
 
-.latest-blogs {
+#latest-blogs {
    /* background: linear-gradient(0deg, #00c8ffaa 0%, #000000); */
    background: #010101;
    color: #e7e7e7;
@@ -149,7 +101,7 @@
    justify-content: space-between;
 }
 
-.latest-blogs h2 {
+#latest-blogs h2 {
    font-size: 40px;
    text-align: center;
    color: transparent;
@@ -158,7 +110,7 @@
    -webkit-background-clip: text;
 }
 
-.latest-blogs div {
+#latest-blogs div {
    border-radius: 10px;
    background: #00c8ff5a;
    margin-top: 40px;
@@ -166,13 +118,13 @@
    box-shadow: 0px 0px 25px 0px #000000;
 }
 
-.latest-blogs div h1 {
+#latest-blogs div h1 {
    font-size: 25px;
    text-align: center;
    text-shadow: 0px 0px 10px #000000;
 }
 
-.latest-blogs div p {
+#latest-blogs div p {
    font-size: 20px;
    font-weight: 300;
    padding-top: 15px;
@@ -181,9 +133,9 @@
    white-space: nowrap;
 }
 
-/* ---------------- Services Section ---------------- */
+/* ---------------- Services ---------------- */
 
-.services {
+#services {
    /* background: linear-gradient(180deg, #00c8ffaa 0%, #000000); */
    background: #010101;
    color: #e7e7e7;
@@ -194,7 +146,7 @@
    padding-right: 40px;
 }
 
-.services h2 {
+#services h2 {
    font-size: 40px;
    text-align: center;
    color: transparent;
@@ -203,18 +155,18 @@
    -webkit-background-clip: text;
 }
 
-.services div {
+#services div {
    padding-top: 40px;
 
 }
 
-.services div h1 {
+#services div h1 {
    font-size: 25px;
    text-align: center;
    text-shadow: 0px 0px 15px #FFF500;
 }
 
-.services div ul {
+#services div ul {
    font-size: 20px;
    font-weight: 300;
    display: flex;
@@ -223,7 +175,7 @@
    padding: 0;
 }
 
-.services div ul li {
+#services div ul li {
    text-align: left;
    list-style-type: none;
    padding: 9px;
