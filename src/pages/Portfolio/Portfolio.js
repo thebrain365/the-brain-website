@@ -32,13 +32,13 @@ const Portfolio = () => {
       document.querySelectorAll('.content').forEach(content => {
          const contentTimeline = contentTimelines.find(tl => tl.id === content.id)
          contentTimeline.timeline.current =  gsap.timeline()
-               .to('#' + content.id, {
+               .to(content, {
                   height: 'auto',
                   duration: 0.5,
                   ease: 'sine.inOut',
                   yoyo: true
                })
-               .to('#' + content.id, {
+               .to(content, {
                   opacity: 1,
                   duration: 0.5,
                   visibility: 'visible',

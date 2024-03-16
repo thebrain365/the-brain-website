@@ -50,7 +50,7 @@ const Home = () => {
          const introductionParagraphs = document.querySelectorAll('.introduction-p')
          introductionParagraphs.forEach(p => {
             if (!p.id.includes('p1')) {
-               gsap.set('#' + p.id, {
+               gsap.set(p, {
                   opacity: 0,
                   top: '300px'
                })
@@ -58,9 +58,9 @@ const Home = () => {
          })
          introductionParagraphs.forEach(p => {
             if (!p.id.includes('p1')) {
-               gsap.to('#' + p.id, {
+               gsap.to(p, {
                   scrollTrigger: {
-                     trigger: '#' + p.id,
+                     trigger: p,
                      start: 'top 100%',
                      toggleActions: "play none none reverse",
                   },
@@ -87,9 +87,9 @@ const Home = () => {
 
          // Services
          document.querySelectorAll('.service').forEach(service => {
-            gsap.from('#' + service.id, {
+            gsap.from(service, {
                scrollTrigger: {
-                  trigger: '#' + service.id,
+                  trigger: service,
                   start: 'top 95%',
                   toggleActions: "play none none reverse",
                },
@@ -104,7 +104,7 @@ const Home = () => {
    
 
    return (
-      <div id='home-container'>
+      <div id='home'>
 
          <section id='welcome' >
 

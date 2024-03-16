@@ -11,241 +11,104 @@ const AboutMe = () => {
       const mm = gsap.matchMedia()
 
       mm.add('(max-width: 479px)', () => {
-         gsap.set(['#location h2', '#journey h2', '#where-to-next h2', '#interests h2', '#qoutes h2', '.p1', '.p2', '.p3'], {
-            opacity: 0,
-            top: '300px'
+
+         const bioSections = document.querySelectorAll('.bio-section h2, .bio-section p')
+         
+         bioSections.forEach(element => {
+            gsap.set(element, {
+               opacity: 0,
+               top: '300px'
+            })
          })
 
-         gsap.set('#qoutes ul', {
-            rotationX: '90deg',
-            // top: '300px',
-            opacity: 0,
-         })
-
-         // Location Section
-         gsap.to('#location h2', {
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-         gsap.to('#location .p1', {
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2,
-         })
-
-         // Journey Section
-         gsap.to('#journey h2', {
-            scrollTrigger: {
-               trigger: '#journey h2',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2,
-         })
-         gsap.to('#journey .p1', {
-            scrollTrigger: {
-               trigger: '#journey .p1',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-         gsap.to('#journey .p2', {
-            scrollTrigger: {
-               trigger: '#journey .p2',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-         gsap.to('#journey .p3', {
-            scrollTrigger: {
-               trigger: '#journey .p3',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
+         gsap.to(['#location h2', '#location .p1'], {
             opacity: 1,
             top: '0',
             ease: 'sine.inOut',
             duration: 1.2
          })
 
-         // Where To Next Section
-         gsap.to('#where-to-next h2', {
-            scrollTrigger: {
-               trigger: '#where-to-next h2',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-         gsap.to('#where-to-next .p1', {
-            scrollTrigger: {
-               trigger: '#where-to-next .p1',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-         gsap.to('#where-to-next .p2', {
-            scrollTrigger: {
-               trigger: '#where-to-next .p2',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-         gsap.to('#where-to-next .p3', {
-            scrollTrigger: {
-               trigger: '#where-to-next .p3',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-
-         // Interests Section
-         gsap.to('#interests h2', {
-            scrollTrigger: {
-               trigger: '#interests h2',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-         gsap.to('#interests .p1', {
-            scrollTrigger: {
-               trigger: '#interests .p1',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-
-         // Qoutes Section
-         gsap.to('#qoutes h2', {
-            scrollTrigger: {
-               trigger: '#qoutes h2',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
-         gsap.to('#qoutes ul', {
-            scrollTrigger: {
-               trigger: '#qoutes ul',
-               start: 'top bottom+=75px',
-               toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            top: '0',
-            rotateX: '0deg',
-            ease: 'sine.inOut',
-            duration: 1.2,
-            delay: 1.2
+         bioSections.forEach(element => {
+            if (!(element.parentNode.id === 'location')) {
+               gsap.to(element, {
+                  scrollTrigger: {
+                     trigger: element,
+                     start: 'top bottom+=75px',
+                     toggleActions: "play none none reverse",
+                  },
+                  opacity: 1,
+                  top: '0',
+                  ease: 'sine.inOut',
+                  duration: 1.2,
+               })
+            }
          })
       })
    })
 
    return (
-      <div id='aboutme-container'>
+      <div id='aboutme'>
          <section id='profile' >
+
             <img id="muano" src="/muano3.jpg" alt='muano thebrain makhokha' />
             <div id='image-overlay'></div>
             <div id='names' >Muano<br/>Makhokha</div>
+
          </section>
 
          <section id='bio' >
-            <div id='location' >
-               <h2>Location</h2>
+
+            <div id='location' className='bio-section' >
+               <h2 className='bio-section-title' >Location</h2>
                <p className='p1' >
                   Based in Soweto, Gauteng, South Africa
                </p>
             </div>
 
-            <div id='journey' >
-               <h2>How far I've come</h2>
-               <div>
-                  <p className='p1' >
-                     I grew up in Muledane, Thohoyandou and I attended Thohoyandou Technical High School, where I did Mathematics, Physical Sciences, Civil Technology, and Engineering Graphics and Design. I excelled in all of these subjects, and what I liked most about them was that they helped me to become a creative person.
-                  </p>
-                  <p className='p2' >
-                     Because of my deep interest in Mathematics, I then pursued my education at the University of the Witwatersrand where I majored in Mathematics and Computer Science. I had never done anything related to computers before and had no clue what it was all about. Looking back at it, it's one of the best decisions I've ever made.
-                  </p>
-                  <p className='p3' >
-                     On my first year I did a lot of introduction stuff like binaries, algorithms and data structures and some basic coding using Python and C++. These weren't really fun at all but I still kept it up. It was in my second year where I really started liking it. I saw what those basics were building up to, and I thought to myself "this whole thing of computers is just pure genius". I loved it and that's when I knew that I would be passionate about this field and a few years later it was so.
-                  </p>
-               </div>
+            <div id='journey' className='bio-section' >
+               <h2 className='bio-section-title' >How far I've come</h2>
+               <p className='p1' >
+                  I grew up in Muledane, Thohoyandou and I attended Thohoyandou Technical High School, where I did Mathematics, Physical Sciences, Civil Technology, and Engineering Graphics and Design. I excelled in all of these subjects, and what I liked most about them was that they helped me to become a creative person.
+               </p>
+               <p className='p2' >
+                  Because of my deep interest in Mathematics, I then pursued my education at the University of the Witwatersrand where I majored in Mathematics and Computer Science. I had never done anything related to computers before and had no clue what it was all about. Looking back at it, it's one of the best decisions I've ever made.
+               </p>
+               <p className='p3' >
+                  On my first year I did a lot of introduction stuff like binaries, algorithms and data structures and some basic coding using Python and C++. These weren't really fun at all but I still kept it up. It was in my second year where I really started liking it. I saw what those basics were building up to, and I thought to myself "this whole thing of computers is just pure genius". I loved it and that's when I knew that I would be passionate about this field and a few years later it was so.
+               </p>
             </div>
 
-            <div id='where-to-next' >
-               <h2>Where to next</h2>
-               <div>
-                  <p className='p1' >
-                     Along my journey in Computer Science I came across multiple areas that have sparked my interest. Which are Software Engineering, Data Science and Cyber Security. To me, these are very different areas, and the difference I appreciate the most is the process of thinking within each area.
-                  </p>
-                  <p className='p2' >
-                     To most these may be too many skills to focus on, and I agree. But this boils down to my personality. I personally prefer to be a "Jack of all trades". Although my specialty lies in Software Engineering.
-                  </p>
-                  <p className='p3' >
-                     I prefer diversity and having the ability to think and solve problems within different environments. Perhaps, this stems from my desire to be an entreprenuer, where it is common to do everything by yourself, especially in the beginning.
-                  </p>
-               </div>
+            <div id='where-to-next' className='bio-section' >
+               <h2 className='bio-section-title' >Where to next</h2>
+               <p className='p1' >
+                  Along my journey in Computer Science I came across multiple areas that have sparked my interest. Which are Software Engineering, Data Science and Cyber Security. To me, these are very different areas, and the difference I appreciate the most is the process of thinking within each area.
+               </p>
+               <p className='p2' >
+                  To most these may be too many skills to focus on, and I agree. But this boils down to my personality. I personally prefer to be a "Jack of all trades". Although my specialty lies in Software Engineering.
+               </p>
+               <p className='p3' >
+                  I prefer diversity and having the ability to think and solve problems within different environments. Perhaps, this stems from my desire to be an entreprenuer, where it is common to do everything by yourself, especially in the beginning.
+               </p>
             </div>
 
-            <div id='interests' >
-               <h2>Interests</h2>
+            <div id='interests' className='bio-section' >
+               <h2 className='bio-section-title' >Interests</h2>
                <p className='p1' >
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iusto repellendus optio, laborum ut ex quos consequuntur pariatur tempore est.
                </p>
             </div>
 
-            <div id='qoutes' >
-               <h2>Favourite quotes</h2>
-               <ul>
-                  <li>
-                     A man who does more than he is paid for... will soon be paid for more than he does.
-                  </li>
-                  <li>
-                     Failing to plan is planning to fail
-                  </li>
-                  <li>
-                     Hard work beats talent if talent doesn't work hard
-                  </li>
-               </ul>
+            <div id='qoutes' className='bio-section' >
+               <h2 className='bio-section-title' >Favourite quotes</h2>
+               <p>
+                  A man who does more than he is paid for... will soon be paid for more than he does.
+               </p>
+               <p>
+                  Failing to plan is planning to fail
+               </p>
+               <p>
+                  Hard work beats talent if talent doesn't work hard
+               </p>
             </div>
 
             <p>

@@ -1,4 +1,4 @@
-#aboutme-container {
+#aboutme {
    background: #000000;
 }
 
@@ -58,15 +58,15 @@
    margin-top: 0px;
 }
 
-#journey, #where-to-next, #interests, #qoutes {
+.bio-section {
    margin-top: 27px;
 }
 
-#location h2, #journey h2, #where-to-next h2, #interests h2, #qoutes h2 {
+.bio-section h2 {
    position: relative;
 }
 
-#location p, #journey p, #where-to-next p, #interests p, #qoutes p {
+.bio-section p {
    margin-top: 35px;
    position: relative;
    line-height: 1.8em;
