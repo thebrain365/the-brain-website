@@ -1,6 +1,6 @@
 import './NavBar.css'
-import BrainLogoSvg from "../../assets/BrainLogoSvg";
-import MenuCircles from '../../assets/MenuCircles';
+import BrainLogoSvg from "../../assets/icons/BrainLogoSvg";
+import MenuCircles from '../../assets/icons/MenuCircles';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useEffect, useRef, useState } from 'react';
