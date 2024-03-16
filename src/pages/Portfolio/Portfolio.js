@@ -9,41 +9,44 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const Portfolio = () => {
 
-   const tlWitsContent = useRef()
-   const tlQyfContent = useRef()
+   const witsContentTimeline = useRef()
+   const qyfContentTimeline = useRef()
+
+   const contentTimelines = [
+      {
+         id: 'wits-content',
+         timeline: witsContentTimeline
+      },
+      {
+         id: 'qyf-internship-content',
+         timeline: qyfContentTimeline
+      }
+   ]
+
+   const toggleContentTimeline = id => {
+      const contentTimeline = contentTimelines.find(tl => tl.id === id)
+      contentTimeline.timeline.current.reversed(!contentTimeline.timeline.current.reversed())
+   }
 
    useGSAP(() => {
-      tlWitsContent.current = gsap.timeline()
-         .to('.wits-content', {
-            height: 'auto',
-            duration: 0.5,
-            ease: 'sine.inOut',
-            yoyo: true
-         })
-         .to('.wits-content', {
-            opacity: 1,
-            duration: 0.5,
-            visibility: 'visible',
-            ease: 'sine.inOut',
-            yoyo: true
-         }, 0.3)
-         .reverse()
-
-      tlQyfContent.current = gsap.timeline()
-         .to('.qyf-internship-content', {
-            height: 'auto',
-            duration: 0.3,
-            ease: 'sine.inOut',
-            yoyo: true
-         })
-         .to('.qyf-internship-content', {
-            opacity: 1,
-            duration: 0.5,
-            visibility: 'visible',
-            ease: 'sine.inOut',
-            yoyo: true
-         })
-         .reverse()
+      document.querySelectorAll('.content').forEach(content => {
+         const contentTimeline = contentTimelines.find(tl => tl.id === content.id)
+         contentTimeline.timeline.current =  gsap.timeline()
+               .to('#' + content.id, {
+                  height: 'auto',
+                  duration: 0.5,
+                  ease: 'sine.inOut',
+                  yoyo: true
+               })
+               .to('#' + content.id, {
+                  opacity: 1,
+                  duration: 0.5,
+                  visibility: 'visible',
+                  ease: 'sine.inOut',
+                  yoyo: true
+               }, 0.3)
+               .reverse()
+      })
    })
 
    return (
@@ -57,14 +60,14 @@ const Portfolio = () => {
 
             <h2
                id='wits-title'
-               onClick={ () => tlWitsContent.current.reversed(!tlWitsContent.current.reversed()) }
+               onClick={ () => toggleContentTimeline("wits-content") }
                typeof='button'
             >
                University of the Witwatersrand<br/>
                <span>2021 Feb - 2023 Dec</span>
             </h2>
 
-            <div className="content wits-content" >
+            <div id='wits-content' className="content" >
 
                <div id='wits-majors' >
 
@@ -97,7 +100,7 @@ const Portfolio = () => {
                   onClick={ 
                      () => {
                         document.getElementById('wits-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
-                        tlWitsContent.current.reversed(!tlWitsContent.current.reversed())
+                        toggleContentTimeline("wits-content")
                      }
                   }
                   typeof='button'
@@ -113,14 +116,14 @@ const Portfolio = () => {
 
             <h2
                id='qyf-title'
-               onClick={ () => tlQyfContent.current.reversed(!tlQyfContent.current.reversed()) }
+               onClick={ () => toggleContentTimeline("qyf-internship-content") }
                typeof='button'
             >
                QFY Virtual Intership Programme<br/>
                <span>2023 Jan - 2023 Feb</span>
             </h2>
 
-            <div className="content qyf-internship-content">
+            <div id='qyf-internship-content' className="content">
 
                <ul>
                   <li>Exposure to real-life work experience with FirstRand, Absa, and Nedbank</li>
@@ -134,7 +137,7 @@ const Portfolio = () => {
                   onClick={
                      () => {
                         document.getElementById('qyf-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
-                        tlQyfContent.current.reversed(!tlQyfContent.current.reversed())
+                        toggleContentTimeline("qyf-internship-content")
                      }
                   }
                   typeof='button'
