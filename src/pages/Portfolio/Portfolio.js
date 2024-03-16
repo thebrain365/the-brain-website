@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useRef } from 'react';
-import UpArrowSvg from '../../assets/UpArrowSvg';
+import UpArrowSvg from '../../assets/icons/UpArrowSvg';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
