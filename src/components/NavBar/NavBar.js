@@ -1,4 +1,4 @@
-import './NavBar.css'
+// import './NavBar.css'
 import BrainLogoSvg from "../../assets/icons/BrainLogoSvg";
 import MenuCircles from '../../assets/icons/MenuCircles';
 import gsap from 'gsap';
@@ -10,85 +10,66 @@ gsap.registerPlugin(useGSAP)
 
 const NavBar = () => {
 
-   const header = useRef()
    const tl = useRef()
 
    const { contextSafe } = useGSAP(() => {
       const mm = gsap.matchMedia()
 
       mm.add('(max-width: 479.99px)', () => {
-         tl.current = gsap.timeline()
-
-         // Squares drop down
-         .to('#menu-circles', {
-            rotation: -405,
+         tl.current = gsap.timeline({ paused: true, ease: 'sine.inOut' })         
+         .set('#menu-wrapper', {
+            left: '0%',
+         })
+         .to('#menu-icon', {
+            rotation: -315,
             transformOrigin: '50% 50%',
-            duration: 0.6,
+            duration: 0.45,
             ease: 'sine.inOut',
             scale: 0.75,
-            boxShadow: '-3px 3px 10px #fff'
-         }, 0)
-
-         // Menu drop down
-         .to('.menu', {
-            bottom: 'auto',
-            duration: 0.6,
-            ease: 'sine.inOut',
-            // boxShadow: '0px 0px 150px 30px #010101ff'
-         }, 0)
-         .to('.menu-wrapper', {
-            bottom: 'auto',
-            duration: 0.01,
-            ease: 'sine.inOut'
-         }, 0)
-
-         // Do reverse
+            fill: 'red'
+         })
+         .to('#menu-wrapper', {
+            opacity: 1,
+            duration: 0.45,
+         }, '-=0.4')
+         .to('#menu', {
+            rotateZ: '360deg'
+         }, '-=0.05')
+         .to('#menu', {
+            height: 'auto',
+            duration: 0.45
+         })
          .reverse()
-      },
-         header
-      ) 
-   },
-      { scope: header }
-   )
+      }) 
+   })
 
-   const handleMenuClicked = contextSafe(() => {
+   const handleMenuClicked = contextSafe((e) => {
+      e.stopPropagation()
       tl.current.reversed(!tl.current.reversed())
    })
 
    return (
-      <header ref={ header }>
-         <nav className='navbar'>
-            <div className='logo-container'>
-               <Link to="/" onClick={ () => { !tl.current.reversed() ? handleMenuClicked() : console.log() } } ><BrainLogoSvg /></Link>
+         <nav id='navbar'>
+            <div id='logo-container' >
+            <BrainLogoSvg handleMenuClicked={ handleMenuClicked }/>
             </div>
 
-            <h1 className='nav-title'>
-               thebrain.dev
-            </h1>
+            <h1 id='navbar-title' >thebrain.dev</h1>
 
+            <MenuCircles handleMenuClicked={ handleMenuClicked } />
 
-            <div 
-               onClick={ handleMenuClicked } 
-               className='menu-icons'>
-               <MenuCircles />
+            <div id='menu-wrapper' onClick={ handleMenuClicked } >
+               <menu id='menu' >
+                  <div>
+                     <Link to="/services" className='menu-item' onClick={ handleMenuClicked } ><li>Services</li></Link>
+                     <Link to="/blogs" className='menu-item' onClick={ handleMenuClicked } ><li>Blogs</li></Link>
+                     <Link to="/portfolio" className='menu-item' onClick={ handleMenuClicked } ><li>Portfolio</li></Link>
+                     <Link to="/aboutme" className='menu-item' onClick={ handleMenuClicked } ><li>About Me</li></Link>
+                     <Link to="" className='menu-item' onClick={ handleMenuClicked } ><li>Get In Touch</li></Link>
+                  </div>
+               </menu>
             </div>
          </nav>
-
-         <div
-            className='menu-wrapper'
-            onClick={ handleMenuClicked }
-         />
-
-         <menu
-            className='menu'>
-               <Link to="/services" className='menu-items' onClick={ handleMenuClicked } ><li>Services</li></Link>
-               <Link to="/blogs" className='menu-items' onClick={ handleMenuClicked } ><li>Blogs</li></Link>
-               <Link to="/portfolio" className='menu-items' onClick={ handleMenuClicked } ><li>Portfolio</li></Link>
-               <Link to="/aboutme" className='menu-items' onClick={ handleMenuClicked } ><li>About Me</li></Link>
-               <Link to="" className='menu-items' onClick={ handleMenuClicked } ><li>Get In Touch</li></Link>
-         </menu>
-      
-      </header>
    );
 }
  

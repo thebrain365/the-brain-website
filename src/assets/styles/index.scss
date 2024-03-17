@@ -4,3 +4,9 @@
 
 @import 'variables';
 
+@import './breakpoints';
+
+@import './components/app';
+@import './components/navbar';
+
+@import './pages/home';

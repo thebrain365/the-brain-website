@@ -106,7 +106,7 @@ const Home = () => {
 
          <section id='welcome' >
 
-            <div id='welcome-message'>
+            <div id='welcome-message' >
 
                <h1>Hi, welcome to my digital space. My name is</h1>
             
@@ -118,7 +118,7 @@ const Home = () => {
 
          </section>
 
-         <section id='introduction'>
+         <section id='introduction' >
 
             <h3 className='section-title' >A little bit about myself</h3>
 

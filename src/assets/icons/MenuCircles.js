@@ -1,6 +1,8 @@
-const MenuCircles = () => {
+const MenuIcon = (props) => {
    return (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+      <svg id='menu-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none"
+         onClick={ props.handleMenuClicked }
+      >
          <g id="menu-circles" filter="url(#filter0_di_159_58)">
             <mask id="mask0_159_58" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="15" y="15" width="90" height="90">
                <g id="circles">
@@ -40,4 +42,4 @@ const MenuCircles = () => {
    );
 }
  
-export default MenuCircles;
+export default MenuIcon;
