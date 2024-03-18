@@ -5,12 +5,14 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { createBrowserHistory } from "@remix-run/router";
 
 gsap.registerPlugin(useGSAP)
 
 const NavBar = () => {
 
    const tl = useRef()
+   const history = createBrowserHistory()
 
    const { contextSafe } = useGSAP(() => {
       const mm = gsap.matchMedia()
@@ -46,6 +48,16 @@ const NavBar = () => {
    const handleMenuClicked = contextSafe((e) => {
       e.stopPropagation()
       tl.current.reversed(!tl.current.reversed())
+   })
+
+   useEffect(() => {
+      const unlisten = history.listen(({ location, action }) => {
+         if (!tl.current.reversed()) {
+            tl.current.reversed(!tl.current.reversed())
+         }
+      })
+
+      return () => unlisten()
    })
 
    return (
