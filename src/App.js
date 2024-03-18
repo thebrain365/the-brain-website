@@ -6,9 +6,9 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
    <div id='app-container'>
-      <header id='app-header'>
+      {/* <header id='app-header'> */}
          <NavBar />
-      </header>
+      {/* </header> */}
 
       <main id='app-content'>
          <Outlet />
