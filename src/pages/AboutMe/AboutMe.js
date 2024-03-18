@@ -1,4 +1,4 @@
-import './AboutMe.css'
+// import './AboutMe.css'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -7,44 +7,44 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const AboutMe = () => {
 
-   useGSAP(() => {
-      const mm = gsap.matchMedia()
+   // useGSAP(() => {
+   //    const mm = gsap.matchMedia()
 
-      mm.add('(max-width: 479px)', () => {
+   //    mm.add('(max-width: 479px)', () => {
 
-         const bioSections = document.querySelectorAll('.bio-section h2, .bio-section p')
+   //       const bioSections = document.querySelectorAll('.bio-section h2, .bio-section p')
          
-         bioSections.forEach(element => {
-            gsap.set(element, {
-               opacity: 0,
-               top: '300px'
-            })
-         })
+   //       bioSections.forEach(element => {
+   //          gsap.set(element, {
+   //             opacity: 0,
+   //             top: '300px'
+   //          })
+   //       })
 
-         gsap.to(['#location h2', '#location .p1'], {
-            opacity: 1,
-            top: '0',
-            ease: 'sine.inOut',
-            duration: 1.2
-         })
+   //       gsap.to(['#location h2', '#location .p1'], {
+   //          opacity: 1,
+   //          top: '0',
+   //          ease: 'sine.inOut',
+   //          duration: 1.2
+   //       })
 
-         bioSections.forEach(element => {
-            if (!(element.parentNode.id === 'location')) {
-               gsap.to(element, {
-                  scrollTrigger: {
-                     trigger: element,
-                     start: 'top bottom+=75px',
-                     toggleActions: "play none none reverse",
-                  },
-                  opacity: 1,
-                  top: '0',
-                  ease: 'sine.inOut',
-                  duration: 1.2,
-               })
-            }
-         })
-      })
-   })
+   //       bioSections.forEach(element => {
+   //          if (!(element.parentNode.id === 'location')) {
+   //             gsap.to(element, {
+   //                scrollTrigger: {
+   //                   trigger: element,
+   //                   start: 'top bottom+=75px',
+   //                   toggleActions: "play none none reverse",
+   //                },
+   //                opacity: 1,
+   //                top: '0',
+   //                ease: 'sine.inOut',
+   //                duration: 1.2,
+   //             })
+   //          }
+   //       })
+   //    })
+   // })
 
    return (
       <div id='aboutme'>

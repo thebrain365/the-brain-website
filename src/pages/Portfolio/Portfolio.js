@@ -1,4 +1,4 @@
-import './Portfolio.css'
+// import './Portfolio.css'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -23,31 +23,31 @@ const Portfolio = () => {
       }
    ]
 
-   const toggleContentTimeline = id => {
-      const contentTimeline = contentTimelines.find(tl => tl.id === id)
-      contentTimeline.timeline.current.reversed(!contentTimeline.timeline.current.reversed())
-   }
+   // const toggleContentTimeline = id => {
+   //    const contentTimeline = contentTimelines.find(tl => tl.id === id)
+   //    contentTimeline.timeline.current.reversed(!contentTimeline.timeline.current.reversed())
+   // }
 
-   useGSAP(() => {
-      document.querySelectorAll('.content').forEach(content => {
-         const contentTimeline = contentTimelines.find(tl => tl.id === content.id)
-         contentTimeline.timeline.current =  gsap.timeline()
-               .to(content, {
-                  height: 'auto',
-                  duration: 0.5,
-                  ease: 'sine.inOut',
-                  yoyo: true
-               })
-               .to(content, {
-                  opacity: 1,
-                  duration: 0.5,
-                  visibility: 'visible',
-                  ease: 'sine.inOut',
-                  yoyo: true
-               }, 0.3)
-               .reverse()
-      })
-   })
+   // useGSAP(() => {
+   //    document.querySelectorAll('.content').forEach(content => {
+   //       const contentTimeline = contentTimelines.find(tl => tl.id === content.id)
+   //       contentTimeline.timeline.current =  gsap.timeline()
+   //             .to(content, {
+   //                height: 'auto',
+   //                duration: 0.5,
+   //                ease: 'sine.inOut',
+   //                yoyo: true
+   //             })
+   //             .to(content, {
+   //                opacity: 1,
+   //                duration: 0.5,
+   //                visibility: 'visible',
+   //                ease: 'sine.inOut',
+   //                yoyo: true
+   //             }, 0.3)
+   //             .reverse()
+   //    })
+   // })
 
    return (
       <div id='portfolio' >
@@ -60,7 +60,7 @@ const Portfolio = () => {
 
             <h2
                id='wits-title'
-               onClick={ () => toggleContentTimeline("wits-content") }
+               // onClick={ () => toggleContentTimeline("wits-content") }
                typeof='button'
             >
                University of the Witwatersrand<br/>
@@ -99,8 +99,8 @@ const Portfolio = () => {
                   className='up-arrow'
                   onClick={ 
                      () => {
-                        document.getElementById('wits-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
-                        toggleContentTimeline("wits-content")
+                        // document.getElementById('wits-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
+                        // toggleContentTimeline("wits-content")
                      }
                   }
                   typeof='button'
@@ -116,7 +116,7 @@ const Portfolio = () => {
 
             <h2
                id='qyf-title'
-               onClick={ () => toggleContentTimeline("qyf-internship-content") }
+               // onClick={ () => toggleContentTimeline("qyf-internship-content") }
                typeof='button'
             >
                QFY Virtual Intership Programme<br/>
@@ -136,8 +136,8 @@ const Portfolio = () => {
                   className='up-arrow'
                   onClick={
                      () => {
-                        document.getElementById('qyf-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
-                        toggleContentTimeline("qyf-internship-content")
+                        // document.getElementById('qyf-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
+                        // toggleContentTimeline("qyf-internship-content")
                      }
                   }
                   typeof='button'

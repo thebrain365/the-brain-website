@@ -43,7 +43,7 @@ header {
 .menu-wrapper {
    position: absolute;
    bottom: 0px;
-   height: 100vh;
+   height: 0;
    width: 100%;
    margin: 0px;
    padding: 0px;

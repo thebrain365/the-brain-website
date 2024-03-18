@@ -1,7 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import './Home.css'
+// import './Home.css'
 import { useRef } from 'react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
@@ -28,87 +28,85 @@ const Home = () => {
       }
    }
 
-   useGSAP(() => {
-      const mm = gsap.matchMedia()
+   // useGSAP(() => {
+   //    const mm = gsap.matchMedia()
 
-      mm.add('(max-width: 479px)', () => {
+   //    mm.add('(max-width: 479px)', () => {
 
-         // Welcome
-         gsap.timeline()
-         .from('#welcome-message', {
-            scale: 0,
-            duration: 1.8,
-            ease: 'bounce'
-         })
-         .from('#name', {
-            duration: 2,
-            ease: 'sine.inOut',
-            text: "",
-         }, '>-0.9')
+   //       // Welcome
+   //       gsap.timeline()
+   //       .from('#welcome-message', {
+   //          scale: 0,
+   //          duration: 1.8,
+   //          ease: 'bounce'
+   //       })
+   //       .from('#name', {
+   //          duration: 2,
+   //          ease: 'sine.inOut',
+   //          text: "",
+   //       }, '>-0.9')
 
-         // Introduction
-         const introductionParagraphs = document.querySelectorAll('.introduction-p')
-         introductionParagraphs.forEach(p => {
-            if (!p.id.includes('p1')) {
-               gsap.set(p, {
-                  opacity: 0,
-                  top: '300px'
-               })
-            }
-         })
-         introductionParagraphs.forEach(p => {
-            if (!p.id.includes('p1')) {
-               gsap.to(p, {
-                  scrollTrigger: {
-                     trigger: p,
-                     start: 'top 100%',
-                     toggleActions: "play none none reverse",
-                  },
-                  top: '0',
-                  opacity: 1,
-                  ease: 'sine.inOut',
-                  duration: 1.2
-               })
-            }
-         })
+   //       // Introduction
+   //       const introductionParagraphs = document.querySelectorAll('.introduction-p')
+   //       introductionParagraphs.forEach(p => {
+   //          if (!p.id.includes('p1')) {
+   //             gsap.set(p, {
+   //                opacity: 0,
+   //                top: '300px'
+   //             })
+   //          }
+   //       })
+   //       introductionParagraphs.forEach(p => {
+   //          if (!p.id.includes('p1')) {
+   //             gsap.to(p, {
+   //                scrollTrigger: {
+   //                   trigger: p,
+   //                   start: 'top 100%',
+   //                   toggleActions: "play none none reverse",
+   //                },
+   //                top: '0',
+   //                opacity: 1,
+   //                ease: 'sine.inOut',
+   //                duration: 1.2
+   //             })
+   //          }
+   //       })
 
-         // Latest Blogs
-         gsap.from('#latest-blogs div', {
-            scrollTrigger: {
-               trigger: '#latest-blogs h2',
-               start: 'top 70%',
-               toggleActions: "play none none reverse",
-            },
-            rotateY: '-90deg',
-            duration: 1.5,
-            ease: 'power1.inOut',
-            stagger: 0.15
-         })
+   //       // Latest Blogs
+   //       gsap.from('#latest-blogs div', {
+   //          scrollTrigger: {
+   //             trigger: '#latest-blogs h2',
+   //             start: 'top 70%',
+   //             toggleActions: "play none none reverse",
+   //          },
+   //          rotateY: '-90deg',
+   //          duration: 1.5,
+   //          ease: 'power1.inOut',
+   //          stagger: 0.15
+   //       })
 
-         // Services
-         document.querySelectorAll('.service').forEach(service => {
-            gsap.from(service, {
-               scrollTrigger: {
-                  trigger: service,
-                  start: 'top 95%',
-                  toggleActions: "play none none reverse",
-               },
-               rotateX: '90deg',
-               duration: 0.5,
-               ease: 'sine.inOut',
-            })
-         })
-      })
-   })
-
-   
+   //       // Services
+   //       document.querySelectorAll('.service').forEach(service => {
+   //          gsap.from(service, {
+   //             scrollTrigger: {
+   //                trigger: service,
+   //                start: 'top 95%',
+   //                toggleActions: "play none none reverse",
+   //             },
+   //             rotateX: '90deg',
+   //             duration: 0.5,
+   //             ease: 'sine.inOut',
+   //          })
+   //       })
+   //    })
+   // })
 
    return (
       <div id='home'>
 
          <section id='welcome' >
 
-            <div id='welcome-message'>
+            <div id='welcome-message' >
 
                <h1>Hi, welcome to my digital space. My name is</h1>
             
@@ -120,7 +118,7 @@ const Home = () => {
 
          </section>
 
-         <section id='introduction'>
+         <section id='introduction' >
 
             <h3 className='section-title' >A little bit about myself</h3>
 

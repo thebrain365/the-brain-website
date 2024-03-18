@@ -1,18 +1,22 @@
-import './App.css'
+// import './App.css'
 import { Outlet } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-   <div>
-      <NavBar />
+   <div id='app-container'>
+      <header id='app-header'>
+         <NavBar />
+      </header>
 
-      <main id='app-container'>
+      <main id='app-content'>
          <Outlet />
       </main>
 
-      <Footer />
+      <footer id='app-footer'>
+         <Footer />
+      </footer>
    </div>
   );
 }
