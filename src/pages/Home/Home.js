@@ -3,6 +3,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 // import './Home.css'
 import { useRef } from 'react';
+import WelcomeBgSvg from '../../assets/icons/WelcomeBgSvg';
+import CallSvgIcon from '../../assets/icons/CallSvgIcon';
+import MailSvgIcon from '../../assets/icons/MailSvgIcon';
+import GitHubSvgIcon from '../../assets/icons/GitHubSvgIcon';
+import LinkedInSvgIcon from '../../assets/icons/LinkedInSvgIcon';
+import InstagramSvgIcon from '../../assets/icons/InstagramSvgIcon';
+import TwitterSvgIcon from '../../assets/icons/TwitterSvgIcon';
+import DiscordSvgIcon from '../../assets/icons/DiscordSvgIcon';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -28,94 +36,96 @@ const Home = () => {
       }
    }
 
-   // useGSAP(() => {
-   //    const mm = gsap.matchMedia()
+   useGSAP(() => {
+      gsap.set('#navbar', {
+         display: 'none'
+      })
 
-   //    mm.add('(max-width: 479px)', () => {
+      gsap.timeline()
+      .set('#welcome-message p', {
+         opacity: 0
+      })
+      .from('#welcome-message h1', {
+         xPercent: -110,
+         duration: 1.5,
+         ease: 'bounce.out'
+      })
+      .to('#welcome-message p', {
+         opacity: 0.7,
+         duration: 0.2
+      })
+      .to('#welcome-message p', {
+         opacity: 0.3,
+         duration: 0.4
+      })
+      .to('#welcome-message p', {
+         opacity: 0.5,
+         duration: 0.04
+      })
+      .to('#welcome-message p', {
+         opacity: 0.1,
+         duration: 0.3
+      })
+      .to('#welcome-message p', {
+         opacity: 0.55,
+         duration: 0.15
+      })
+      .to('#welcome-message p', {
+         opacity: 0.33,
+         duration: 0.23
+      })
+      .to('#welcome-message p', {
+         opacity: 0.65,
+         duration: 0.05
+      })
+      .to('#welcome-message p', {
+         opacity: 0.15,
+         duration: 0.10
+      })
+      .to('#welcome-message p', {
+         opacity: 0.1,
+         duration: 0.3
+      })
+      .to('#welcome-message p', {
+         opacity: 1,
+         duration: 0.3
+      })
+   })
 
-   //       // Welcome
-   //       gsap.timeline()
-   //       .from('#welcome-message', {
-   //          scale: 0,
-   //          duration: 1.8,
-   //          ease: 'bounce'
-   //       })
-   //       .from('#name', {
-   //          duration: 2,
-   //          ease: 'sine.inOut',
-   //          text: "",
-   //       }, '>-0.9')
+   const partOfDay = () => {
+      const currentTime = new Date()
 
-   //       // Introduction
-   //       const introductionParagraphs = document.querySelectorAll('.introduction-p')
-   //       introductionParagraphs.forEach(p => {
-   //          if (!p.id.includes('p1')) {
-   //             gsap.set(p, {
-   //                opacity: 0,
-   //                top: '300px'
-   //             })
-   //          }
-   //       })
-   //       introductionParagraphs.forEach(p => {
-   //          if (!p.id.includes('p1')) {
-   //             gsap.to(p, {
-   //                scrollTrigger: {
-   //                   trigger: p,
-   //                   start: 'top 100%',
-   //                   toggleActions: "play none none reverse",
-   //                },
-   //                top: '0',
-   //                opacity: 1,
-   //                ease: 'sine.inOut',
-   //                duration: 1.2
-   //             })
-   //          }
-   //       })
-
-   //       // Latest Blogs
-   //       gsap.from('#latest-blogs div', {
-   //          scrollTrigger: {
-   //             trigger: '#latest-blogs h2',
-   //             start: 'top 70%',
-   //             toggleActions: "play none none reverse",
-   //          },
-   //          rotateY: '-90deg',
-   //          duration: 1.5,
-   //          ease: 'power1.inOut',
-   //          stagger: 0.15
-   //       })
-
-   //       // Services
-   //       document.querySelectorAll('.service').forEach(service => {
-   //          gsap.from(service, {
-   //             scrollTrigger: {
-   //                trigger: service,
-   //                start: 'top 95%',
-   //                toggleActions: "play none none reverse",
-   //             },
-   //             rotateX: '90deg',
-   //             duration: 0.5,
-   //             ease: 'sine.inOut',
-   //          })
-   //       })
-   //    })
-   // })
+      if (5 <= currentTime.getHours() && currentTime.getHours() <= 11) {
+         return "morning"
+      } else if (12 <= currentTime.getHours() && currentTime.getHours() <= 17) {
+         return "efternoon"
+      } else {
+         return "evening"
+      }
+   }
 
    return (
       <div id='home'>
 
          <section id='welcome' >
 
+            <div id='bg-image-filter' ></div>
+
             <div id='welcome-message' >
-
-               <h1>Hi, welcome to my digital space. My name is</h1>
-            
-               <h1>&lt; <span id='name'>Muano</span> /&gt;</h1>
-
-               <h1>and I'm thrilled to have you here!</h1>
-
+               <p>Good { partOfDay() }, I'm</p>
+               <h1>Muano.</h1>
+               <p>Welcome to my digital space</p>
             </div>
 
+            <div id='welcome-contact-div'>
+               <CallSvgIcon />
+               <MailSvgIcon />
+               <GitHubSvgIcon />
+               <LinkedInSvgIcon />
+               <TwitterSvgIcon />
+               <InstagramSvgIcon />
+               <DiscordSvgIcon />
+            </div>
          </section>
 
          <section id='introduction' >

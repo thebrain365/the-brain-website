@@ -17,32 +17,30 @@ const NavBar = () => {
    const { contextSafe } = useGSAP(() => {
       const mm = gsap.matchMedia()
 
-      mm.add('(max-width: 479.99px)', () => {
-         tl.current = gsap.timeline({ paused: true, ease: 'sine.inOut' })         
-         .set('#menu-wrapper', {
-            left: '0%',
-         })
-         .to('#menu-icon', {
-            rotation: -315,
-            transformOrigin: '50% 50%',
-            duration: 0.45,
-            ease: 'sine.inOut',
-            scale: 0.75,
-            fill: 'red'
-         })
-         .to('#menu-wrapper', {
-            opacity: 1,
-            duration: 0.45,
-         }, '-=0.4')
-         .to('#menu', {
-            rotateZ: '360deg'
-         }, '-=0.05')
-         .to('#menu', {
-            height: 'auto',
-            duration: 0.45
-         })
-         .reverse()
-      }) 
+      tl.current = gsap.timeline({ paused: true, ease: 'sine.inOut' })         
+      .set('#menu-wrapper', {
+         left: '0%',
+      })
+      .to('#menu-icon', {
+         rotation: -315,
+         transformOrigin: '50% 50%',
+         duration: 0.45,
+         ease: 'sine.inOut',
+         scale: 0.75,
+         fill: 'red'
+      })
+      .to('#menu-wrapper', {
+         opacity: 1,
+         duration: 0.45,
+      }, '-=0.4')
+      .to('#menu', {
+         rotateZ: '360deg'
+      }, '-=0.05')
+      .to('#menu', {
+         height: 'auto',
+         duration: 0.45
+      })
+      .reverse()
    })
 
    const handleMenuClicked = contextSafe((e) => {
