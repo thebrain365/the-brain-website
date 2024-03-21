@@ -41,8 +41,9 @@ const Home = () => {
          display: 'none'
       })
 
-      gsap.timeline()
-      .set('#welcome-message p', {
+      tl.current = gsap.timeline()
+      
+      tl.current.set('#welcome-message p', {
          opacity: 0
       })
       .from('#welcome-message h1', {
@@ -50,45 +51,15 @@ const Home = () => {
          duration: 1.5,
          ease: 'bounce.out'
       })
-      .to('#welcome-message p', {
-         opacity: 0.7,
-         duration: 0.2
-      })
-      .to('#welcome-message p', {
-         opacity: 0.3,
-         duration: 0.4
-      })
-      .to('#welcome-message p', {
-         opacity: 0.5,
-         duration: 0.04
-      })
-      .to('#welcome-message p', {
-         opacity: 0.1,
-         duration: 0.3
-      })
-      .to('#welcome-message p', {
-         opacity: 0.55,
-         duration: 0.15
-      })
-      .to('#welcome-message p', {
-         opacity: 0.33,
-         duration: 0.23
-      })
-      .to('#welcome-message p', {
-         opacity: 0.65,
-         duration: 0.05
-      })
-      .to('#welcome-message p', {
-         opacity: 0.15,
-         duration: 0.10
-      })
-      .to('#welcome-message p', {
-         opacity: 0.1,
-         duration: 0.3
-      })
-      .to('#welcome-message p', {
-         opacity: 1,
-         duration: 0.3
+
+      const opacityValues = [0, 0.7, 0.3, 0.5, 0.1, 0.55, 0.33, 0.65, 0.15, 0.1, 1];
+      const durations = [0, 0.2, 0.4, 0.04, 0.3, 0.15, 0.23, 0.05, 0.1, 0.3, 0.3];
+      
+      opacityValues.forEach((opacity, index) => {
+         tl.current.to('#welcome-message p', {
+              opacity: opacity,
+              duration: durations[index]
+          })
       })
    })
 
