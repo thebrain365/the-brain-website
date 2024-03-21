@@ -1,5 +1,93 @@
 #home {
    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 100svh;
+   }
+}
+
+#welcome {
+   background: $dark;
+   position: relative;
+   overflow: hidden;
+
+   background-image: url('/public/bg-image.jpg');
+   background-size: auto 100svh;
+   background-position: 25% 0%;
+   background-repeat: no-repeat;
+
+   @include md {
+      background-size: cover;
+      background-position: 0% 50%;
+   }
+
+   #bg-image-filter {
+      height: 100svh;
+      width: 100%;
+      background: rgba($dark, $alpha: .5);
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(1px);
+   }
+
+   #welcome-message {
+      position: absolute;
+      bottom: 15svh;
+      font-size: 26px;
+      color: $primary;
+      width: 100%;
+      padding-left: 12px;
+      margin: 0;
+      line-height: 70px;
+      text-transform: lowercase;
+
+      h1 {
+         position: relative;
+         font-size: 100px;
+         font-weight: 400;
+         width: max-content;
+         color: transparent;
+         background: linear-gradient(225deg, $accent-2 30%, $secondary);
+         background-clip: text;
+         -webkit-background-clip: text;
+         -webkit-text-stroke: 1px rgba($light, $alpha: .15);
+      }
+      
+      p {
+         font-weight: 500;
+         text-shadow: 
+            0px 0px 15px #0ff,
+            0px 0px 25px #00f,
+            0px 0px 35px #0ff,
+            0px 0px 45px #00f,
+            0px 0px 55px #00f,
+            0px 0px 65px #00f,
+            0px 0px 75px #00f,
+            0px 0px 85px #00f,
+            0px 0px 95px #00f;
+      }
+   }
+
+   #welcome-contact-div {
+      position: absolute;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      bottom: 6svh;
+      width: 90%;
+      height: 55px;
+      background: rgba($primary, $alpha: .3);
+      border-radius: 35px;
+      border: 3px solid rgba($light, $alpha: 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px inset rgba($dark, $alpha: .4);
+      -webkit-box-reflect: below 15px linear-gradient(transparent, rgba($light, $alpha: .2));
+
+      .welcome-contact-div-icons {
+         width: auto;
+         height: 60%;
+      }
    }
 }
