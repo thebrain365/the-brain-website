@@ -43,7 +43,7 @@
   height: 0;
 }
 #app-container #app-bg .label {
-  font-size: 4em;
+  font-size: 5em;
 }
 #app-container #app-bg #label-2, #app-container #app-bg #label-4 {
   align-self: self-end;
