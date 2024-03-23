@@ -15,6 +15,38 @@
   font-family: poppins;
   font-size: 22px;
   font-weight: 300;
+  background: #fd6602;
+}
+@media (min-width: 960px) {
+  #app-container {
+    box-shadow: 0 0 720px 0px inset rgba(1, 1, 1, 0.2);
+  }
+}
+#app-container #app-bg {
+  position: fixed;
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  color: rgba(255, 115, 0, 0.7);
+  text-shadow: none;
+  font-size: 70px;
+  text-wrap: nowrap;
+}
+#app-container #app-bg h1 {
+  position: relative;
+  top: -25%;
+  padding: 0;
+  margin: 0;
+  height: 0;
+}
+#app-container #app-bg .label {
+  font-size: 4em;
+}
+#app-container #app-bg #label-2, #app-container #app-bg #label-4 {
+  align-self: self-end;
 }
 
 #navbar {
@@ -25,9 +57,9 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  position: sticky;
+  position: fixed;
   top: 0px;
-  z-index: 1;
+  z-index: 6;
 }
 
 #logo-container {
@@ -45,13 +77,13 @@
   height: 100%;
 }
 #brain-logo path {
-  fill: #ff6b00;
+  fill: #ff7300;
 }
 
 #navbar-title {
   margin-right: 20px;
   color: transparent;
-  background: linear-gradient(30deg, #fff500 30%, #ff6b00);
+  background: linear-gradient(30deg, #fff500 30%, #ff7300);
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -67,7 +99,6 @@
   left: -100%;
   width: 100%;
   height: 100svh;
-  z-index: 1;
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -82,7 +113,6 @@
   top: -8%;
   width: fit-content;
   height: fit-content;
-  z-index: 2;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -108,37 +138,41 @@
   padding: 20px 80px;
 }
 
+#home {
+  background-color: transparent;
+  color: #f5f5f5;
+  text-shadow: 4px 33px 15px #010101;
+}
 #home section {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100svh;
+  min-height: 100svh;
 }
-
-#welcome {
-  background: #010101;
-  position: relative;
+#home #welcome {
   overflow: hidden;
+  z-index: 7;
   background-image: url("/public/bg-image.jpg");
-  background-size: auto 100svh;
+  background-size: auto 100lvh;
   background-position: 25% 0%;
   background-repeat: no-repeat;
 }
 @media (min-width: 720px) {
-  #welcome {
+  #home #welcome {
     background-size: cover;
     background-position: 0% 50%;
   }
 }
-#welcome #bg-image-filter {
+#home #welcome #bg-image-filter {
   height: 100svh;
   width: 100%;
   background: rgba(1, 1, 1, 0.5);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
 }
-#welcome #welcome-message {
+#home #welcome #welcome-message {
   position: absolute;
   bottom: 15svh;
   font-size: 26px;
@@ -149,22 +183,23 @@
   line-height: 70px;
   text-transform: lowercase;
 }
-#welcome #welcome-message h1 {
+#home #welcome #welcome-message h1 {
   position: relative;
   font-size: 100px;
   font-weight: 400;
   width: max-content;
   color: transparent;
-  background: linear-gradient(225deg, #ff6b00 30%, #ae00ff);
+  text-shadow: none;
+  background-image: radial-gradient(circle 860px at 11.8% 33.5%, rgb(240, 30, 92), rgb(244, 49, 74), rgb(249, 75, 37), rgb(250, 88, 19), rgb(253, 102, 2));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px rgba(245, 245, 245, 0.15);
 }
-#welcome #welcome-message p {
+#home #welcome #welcome-message p {
   font-weight: 500;
   text-shadow: 0px 0px 15px #0ff, 0px 0px 25px #00f, 0px 0px 35px #0ff, 0px 0px 45px #00f, 0px 0px 55px #00f, 0px 0px 65px #00f, 0px 0px 75px #00f, 0px 0px 85px #00f, 0px 0px 95px #00f;
 }
-#welcome #welcome-contact-div {
+#home #welcome #welcome-contact-div {
   position: absolute;
   display: flex;
   justify-content: space-evenly;
@@ -180,7 +215,41 @@
   box-shadow: 0 0 20px inset rgba(1, 1, 1, 0.4);
   -webkit-box-reflect: below 15px linear-gradient(transparent, rgba(245, 245, 245, 0.2));
 }
-#welcome #welcome-contact-div .welcome-contact-div-icons {
+#home #welcome #welcome-contact-div .welcome-contact-div-icons {
   width: auto;
   height: 60%;
+}
+#home #introduction {
+  width: 100%;
+}
+#home #introduction h3 {
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+#home #introduction p {
+  margin: 35px auto;
+  padding: 0px 30px;
+}
+#home #introduction p:last-child {
+  margin-bottom: 0px;
+}
+#home #latest-blogs h3 {
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+#home #latest-blogs #blogs {
+  margin: 0px 30px;
+}
+#home #latest-blogs .blog {
+  margin: 35px 0;
+  padding: 10px 30px;
+  border: 1px solid whitesmoke;
+  text-shadow: none;
+  text-align: center;
+  box-shadow: 0 13px 20px rgba(1, 1, 1, 0.3), 0 0 20px inset rgba(255, 245, 0, 0.24);
+  border-radius: 14px;
 }

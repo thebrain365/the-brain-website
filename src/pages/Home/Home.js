@@ -16,7 +16,8 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const Home = () => {
 
-   const tl = useRef()
+   const welcomeMessageTimeline = useRef()
+   const navbarTimeline = useRef()
 
    let myBlogs = {
       '1': {
@@ -36,30 +37,49 @@ const Home = () => {
       }
    }
 
-   useGSAP(() => {
+   useGSAP(() => { 
       gsap.set('#navbar', {
-         display: 'none'
+         opacity: 0
       })
 
-      tl.current = gsap.timeline()
+      gsap.to('#navbar', {
+         scrollTrigger: {
+            trigger: '#welcome',
+            toggleActions: 'play none none reset',
+            start: 'bottom 70px',
+            end: 'bottom -70px',
+            scrub: true,
+         },
+         opacity: 1,
+      })
+
+      welcomeMessageTimeline.current = gsap.timeline()
       
-      tl.current.set('#welcome-message p', {
+      welcomeMessageTimeline.current.set('#welcome-message p, #welcome-message h1', {
          opacity: 0
       })
       .from('#welcome-message h1', {
          xPercent: -110,
-         duration: 1.5,
-         ease: 'bounce.out'
+         opacity: 1,
+         duration: 0.8,
+         ease: 'sine',
+         delay: 0.6
       })
+      .from('#welcome-contact-div', {
+         top: '100%',
+         opacity: 1,
+         duration: 0.8,
+         ease: 'sine',
+      }, '>-100%')
 
       const opacityValues = [0, 0.7, 0.3, 0.5, 0.1, 0.55, 0.33, 0.65, 0.15, 0.1, 1];
       const durations = [0, 0.2, 0.4, 0.04, 0.3, 0.15, 0.23, 0.05, 0.1, 0.3, 0.3];
       
       opacityValues.forEach((opacity, index) => {
-         tl.current.to('#welcome-message p', {
-              opacity: opacity,
-              duration: durations[index]
-          })
+         welcomeMessageTimeline.current.to('#welcome-message p', {
+            opacity: opacity,
+            duration: durations[index]
+         })
       })
    })
 
@@ -100,15 +120,15 @@ const Home = () => {
          </section>
 
          <section id='introduction' >
-
+            
             <h3 className='section-title' >A little bit about myself</h3>
 
             <p id='introduction-p1' className='introduction-p'>
-               I am a very passionate and versatile techie. I wear multiple hats in the tech industry—being a full-stack developer, a data analyst, and an up coming penetration tester.
+               I am a very passionate and versatile techie. I wear multiple hats in the tech industry—being a full-stack developer, a data analyst, and a database designer.
             </p>
 
             <p id='introduction-p2' className='introduction-p'>
-               This website is your gateway to exploring my journey and the diverse range of skills I bring to the table. Whether you're interested in innovative software projects, cutting-edge data science solutions, or the intricacies of cybersecurity, you'll find it all here.   
+               This website is your gateway to exploring my journey and the diverse range of skills I bring to the table. Whether you're interested in innovative software projects, cutting-edge data science solutions, or the intricacies of database design, you'll find it all here.   
             </p>
 
             <p id='introduction-p3' className='introduction-p'>
@@ -119,22 +139,24 @@ const Home = () => {
 
          <section id='latest-blogs' >
 
-            <h2 className='section-title' >Latest blogs</h2>
+            <h3 className='section-title' >Latest blogs</h3>
 
-            {
-               Object.values(myBlogs).map(blog => (
-                  <div key={ blog.id } >
-                     <h1>{ blog.title }</h1>
-                     <p>{ blog.body }</p>
-                  </div>
-               ))
-            }
+            <div id="blogs">
+               {
+                  Object.values(myBlogs).map(blog => (
+                     <div className='blog' key={ blog.id } >
+                        <h1>{ blog.title }</h1>
+                        <p>{ blog.body.substring(0, 25) }...</p>
+                     </div>
+                  ))
+               }
+            </div>
 
          </section>
 
          <section id='services' >
 
-            <h2 className='section-title' >Services</h2>
+            <h3 className='section-title' >Services</h3>
 
             <div id='service-1' className='service' >
                <h1>Software Engineering</h1>
@@ -157,6 +179,7 @@ const Home = () => {
             </div>
 
          </section>
+
       </div>
    );
 }

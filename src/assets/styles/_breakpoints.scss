@@ -36,8 +36,14 @@ $bp: (
    }
 }
 
-@mixin breakpoint($bp: 0px) {
+@mixin widthbreakpoint($bp: 0px) {
    @media (max-width: $bp) {
+      @content;
+   }
+}
+
+@mixin heightbreakpoint($bp: 0px) {
+   @media (max-height: $bp) {
       @content;
    }
 }

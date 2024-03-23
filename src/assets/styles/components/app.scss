@@ -3,4 +3,39 @@
    font-family: $base-font;
    font-size: $base-font-size;
    font-weight: $base-font-weight;
+   background: #fd6602;
+   
+   @include lg {
+      box-shadow: 0 0 720px 0px inset rgba($dark, $alpha: .2);
+   }
+
+   #app-bg {
+      position: fixed;
+      width: 100%;
+      height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: start;
+      color: rgba($accent-2, $alpha: .70);
+      text-shadow: none;
+      font-size: 70px;
+      text-wrap: nowrap;
+
+      h1 {
+         position: relative;
+         top: -25%;
+         padding: 0;
+         margin: 0;
+         height: 0;
+      }
+
+      .label {
+         font-size: 4em;
+      }
+
+      #label-2, #label-4 {
+         align-self: self-end;
+      }
+   }
 }
