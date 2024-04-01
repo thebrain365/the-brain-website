@@ -38,21 +38,7 @@ const Home = () => {
    }
 
    useGSAP(() => { 
-      gsap.set('#navbar', {
-         opacity: 0
-      })
-
-      gsap.to('#navbar', {
-         scrollTrigger: {
-            trigger: '#welcome',
-            toggleActions: 'play none none reset',
-            start: 'bottom 70px',
-            end: 'bottom -70px',
-            scrub: true,
-         },
-         opacity: 1,
-      })
-
+      
       welcomeMessageTimeline.current = gsap.timeline()
       
       welcomeMessageTimeline.current.set('#welcome-message p, #welcome-message h1', {
@@ -71,7 +57,7 @@ const Home = () => {
          duration: 0.8,
          ease: 'sine',
       }, '>-100%')
-
+      
       const opacityValues = [0, 0.7, 0.3, 0.5, 0.1, 0.55, 0.33, 0.65, 0.15, 0.1, 1];
       const durations = [0, 0.2, 0.4, 0.04, 0.3, 0.15, 0.23, 0.05, 0.1, 0.3, 0.3];
       
@@ -81,8 +67,28 @@ const Home = () => {
             duration: durations[index]
          })
       })
-   })
 
+      const mm = gsap.matchMedia()
+   
+      mm.add('(min-width: 720px)', () => {
+         gsap.from('#navbar-title, #menu-icon', {
+            scrollTrigger: {
+               trigger: '#welcome',
+               toggleActions: 'play none none reset',
+               start: 'bottom 60px',
+               end: 'bottom -100px',
+               scrub: true,
+               markers: true
+            },
+            translateX: '100%'
+   
+         })
+      })
+
+      // gsap.to('#')
+
+   })
+   
    const partOfDay = () => {
       const currentTime = new Date()
 
@@ -124,7 +130,7 @@ const Home = () => {
             <h3 className='section-title' >A little bit about myself</h3>
 
             <p id='introduction-p1' className='introduction-p'>
-               I am a very passionate and versatile techie. I wear multiple hats in the tech industry—being a full-stack developer, a data analyst, and a database designer.
+               I am a very passionate and versatile techie. I wear multiple hats in the tech industry—being a full-stack developer, a penetration tester, and a database designer.
             </p>
 
             <p id='introduction-p2' className='introduction-p'>
@@ -140,13 +146,15 @@ const Home = () => {
          <section id='latest-blogs' >
 
             <h3 className='section-title' >Latest blogs</h3>
-
+            
             <div id="blogs">
                {
                   Object.values(myBlogs).map(blog => (
-                     <div className='blog' key={ blog.id } >
-                        <h1>{ blog.title }</h1>
-                        <p>{ blog.body.substring(0, 25) }...</p>
+                     <div className="blog-container">
+                        <div className='blog' key={ blog.id } >
+                           <h1>{ blog.title }</h1>
+                           <p>{ blog.body.substring(0, 25) }...</p>
+                        </div>
                      </div>
                   ))
                }
@@ -162,21 +170,32 @@ const Home = () => {
                <h1>Software Engineering</h1>
                <ul>
                   <li>Software Development</li>
+                  <li>Web/Mobile Application Development</li>
                   <li>Database Design</li>
                   <li>Software Design</li>
                   <li>UI/UX Design</li>
-                  <li>Testing</li>
+                  <li>Software Testing</li>
                </ul>
             </div>
 
             <div id='service-2' className='service' >
+               <h1>Cyber Security</h1>
+               <ul>
+                  <li>Pen Tests (Ethical Hacking)</li>
+                  <li>Vulnerability Assessment</li>
+                  <li>Web/Mobile Application Security</li>
+                  {/* <li>IDS/IPS</li> */}
+               </ul>
+            </div>
+
+            {/* <div id='service-3' className='service' >
                <h1>Data Analytics</h1>
                <ul>
                   <li>Statistical Analysis</li>
                   <li>Data Visualisation</li>
-                  <li>Building Models</li>
+                  <li>Models</li>
                </ul>
-            </div>
+            </div> */}
 
          </section>
 

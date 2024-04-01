@@ -22,7 +22,7 @@ const NavBar = () => {
          left: '0%',
       })
       .to('#menu-icon', {
-         rotation: -315,
+         rotation: -135,
          transformOrigin: '50% 50%',
          duration: 0.45,
          ease: 'sine.inOut',
@@ -61,7 +61,7 @@ const NavBar = () => {
    return (
          <nav id='navbar'>
             <div id='logo-container' >
-            <BrainLogoSvg handleMenuClicked={ handleMenuClicked }/>
+               <BrainLogoSvg handleMenuClicked={ handleMenuClicked }/>
             </div>
 
             <h1 id='navbar-title' >thebrain.dev</h1>

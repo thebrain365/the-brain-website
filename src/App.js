@@ -9,16 +9,20 @@ gsap.registerPlugin(useGSAP)
 
 function App() {
 
-   useGSAP(() => {
-      gsap.to('#label-1, #label-3', {
-         left: '-100%',
-         duration: 100
-      })
-      gsap.to('#label-2, #label-4', {
-         left: '100%',
-         duration: 100
-      })
-   })
+   // useGSAP(() => {
+   //    gsap.to('#label-1, #label-3', {
+   //       left: '-100%',
+   //       duration: 100,
+   //       yoyo: true,
+   //       repeat: -1
+   //    })
+   //    gsap.to('#label-2, #label-4', {
+   //       left: '100%',
+   //       duration: 100,
+   //       yoyo: true,
+   //       repeat: -1
+   //    })
+   // })
 
   return (
    <div id='app-container'>
