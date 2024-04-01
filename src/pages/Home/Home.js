@@ -78,15 +78,11 @@ const Home = () => {
                start: 'bottom 60px',
                end: 'bottom -100px',
                scrub: true,
-               markers: true
             },
             translateX: '100%'
    
          })
       })
-
-      // gsap.to('#')
-
    })
    
    const partOfDay = () => {
@@ -152,7 +148,7 @@ const Home = () => {
                   Object.values(myBlogs).map(blog => (
                      <div className="blog-container">
                         <div className='blog' key={ blog.id } >
-                           <h1>{ blog.title }</h1>
+                           <h1>{ blog.title.length > 25 ? `${blog.title.substring(0, 25)}...` : blog.title }</h1>
                            <p>{ blog.body.substring(0, 25) }...</p>
                         </div>
                      </div>
@@ -170,11 +166,12 @@ const Home = () => {
                <h1>Software Engineering</h1>
                <ul>
                   <li>Software Development</li>
-                  <li>Web/Mobile Application Development</li>
+                  <li>Web Application Development</li>
                   <li>Database Design</li>
                   <li>Software Design</li>
                   <li>UI/UX Design</li>
                   <li>Software Testing</li>
+                  <li>Business Emails</li>
                </ul>
             </div>
 
@@ -183,19 +180,20 @@ const Home = () => {
                <ul>
                   <li>Pen Tests (Ethical Hacking)</li>
                   <li>Vulnerability Assessment</li>
-                  <li>Web/Mobile Application Security</li>
+                  <li>Web Application Security</li>
                   {/* <li>IDS/IPS</li> */}
                </ul>
             </div>
 
-            {/* <div id='service-3' className='service' >
+            <div id='service-3' className='service' >
                <h1>Data Analytics</h1>
                <ul>
                   <li>Statistical Analysis</li>
                   <li>Data Visualisation</li>
-                  <li>Models</li>
+                  <li>Data Models</li>
+                  <li>Reporting</li>
                </ul>
-            </div> */}
+            </div>
 
          </section>
 
