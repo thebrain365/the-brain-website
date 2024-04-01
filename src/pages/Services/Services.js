@@ -3,7 +3,8 @@
 const Services = () => {
    return (
       <div id='services' >
-         <section id='software-engineering' >
+
+         <section id='software-engineering' className="service" >
 
             <h1 className='service-title' >Software Engineering</h1>
 
@@ -12,7 +13,7 @@ const Services = () => {
                   As a recent graduate in software engineering with a specialization in full-stack development, I am excited to embark on my journey in the world of technology. Equipped with a solid foundation in both front-end and back-end development, I am eager to contribute my skills to creating impactful digital solutions.
                </p>
                <p>
-                  I have a knack for developing robust REST APIs that power dynamic web applications and mobile apps. Through coursework and hands-on projects, I've gained experience in building scalable and efficient backend systems that meet the demands of modern software development.
+                  I have a knack for developing robust REST APIs that power dynamic web and mobile applications. Through coursework and hands-on projects, I've gained experience in building scalable and efficient backend systems that meet the demands of modern software development.
                </p>
                <p>
                   My passion for design and user experience fuels my ability to craft intuitive and visually appealing interfaces that resonate with users. From wireframing to prototyping, I enjoy the creative process of bringing ideas to life and ensuring that every pixel serves a purpose.
@@ -57,13 +58,31 @@ const Services = () => {
             </div>
          </section>
 
-         <section id='database-design' >
+         <section id="cyber-security" className="service">
+            <h1 className="service-title">Cyber Security</h1>
+
+            <div className="service-description">
+               <p>
+                  Specializing in penetration testing, vulnerability assessments, and web application security, I ensure robust defenses against cyber threats. With thorough testing, I identify vulnerabilities and fortify digital infrastructure, safeguarding sensitive data and preserving online integrity.
+               </p>
+
+               <p>
+                  Offering tailored services in penetration testing, vulnerability assessments, and web application security, I empower organizations to stay ahead of cyber threats. Through targeted assessments and proactive measures, I bolster digital resilience, protecting against potential breaches and ensuring secure online operations.
+               </p>
+            </div>
+
+            <div className="service-tools">
+               <h3>Tech Stack</h3>
+            </div>
+         </section>
+
+         <section id='database-design' className="service" >
 
             <h1 className='service-title' >Database Design and Implementation</h1>
 
             <div className='service-description' >
                <p>
-                  I can also design and implement relational databases using ER modeling, advanced data modeling, and SQL. Throughout my coursework and hands-on projects, I've developed an understanding of database architecture, ensuring efficient and scalable solutions. By applying normalization techniques, I can optimize database structures for performance and maintainability, eliminating redundancies and update anomalies.
+                  I can also design and implement relational databases using ER modeling, advanced data modeling, and SQL. I have developed an understanding of database architecture, ensuring efficient and scalable solutions. By applying normalization techniques, I can optimize database structures for performance and maintainability, eliminating redundancies and update anomalies.
                </p>
                <p>
                   Advance in SQL, I have the ability to write complex queries, manipulate data, and optimize database performance. This skill allows me to extract valuable insights from data and drive informed decision-making. With a passion for innovation and a commitment to continuous learning, I want to contribute effectively to real-world projects, leveraging my expertise to create robust and reliable database solutions that empower organizations to unlock the full potential of their data.
@@ -76,13 +95,14 @@ const Services = () => {
                </h3>
             </div>
          </section>
-         <section id='data-analytics' >
+
+         <section id='data-analytics' className="service" >
 
             <h1 className='service-title' >Data Analytics</h1>
 
             <div className='service-description' >
                <p>
-                  I possess a strong foundation in data analysis, spanning data framing, exploration, interpretation, modeling, and visualization. Through coursework and practical exposure, I've honed my ability to structure datasets effectively, explore patterns and relationships, and derive actionable insights.
+                  I possess a strong foundation in data analysis, spanning data framing, exploration, interpretation, modeling, and visualization. I have honed my ability to structure datasets effectively, explore patterns and relationships, and derive actionable insights.
                </p>
                <p>
                   My experience includes employing statistical methods and visualization tools to uncover insights, interpret findings, and communicate results effectively. Additionally, I've delved into various modeling techniques, including regression analysis and machine learning to make informed predictions and drive decision-making processes.
@@ -97,10 +117,12 @@ const Services = () => {
                   <li>Python</li>
                   <li>Microsoft Excel</li>
                   <li>Microsoft Powerpoint</li>
+                  <li>Power BI</li>
                </ul>
             </div>
 
          </section>
+
       </div>
    );
 }

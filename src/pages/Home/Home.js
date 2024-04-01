@@ -16,7 +16,8 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const Home = () => {
 
-   const tl = useRef()
+   const welcomeMessageTimeline = useRef()
+   const navbarTimeline = useRef()
 
    let myBlogs = {
       '1': {
@@ -36,62 +37,54 @@ const Home = () => {
       }
    }
 
-   useGSAP(() => {
-      gsap.set('#navbar', {
-         display: 'none'
-      })
-
-      gsap.timeline()
-      .set('#welcome-message p', {
+   useGSAP(() => { 
+      
+      welcomeMessageTimeline.current = gsap.timeline()
+      
+      welcomeMessageTimeline.current.set('#welcome-message p, #welcome-message h1', {
          opacity: 0
       })
       .from('#welcome-message h1', {
          xPercent: -110,
-         duration: 1.5,
-         ease: 'bounce.out'
-      })
-      .to('#welcome-message p', {
-         opacity: 0.7,
-         duration: 0.2
-      })
-      .to('#welcome-message p', {
-         opacity: 0.3,
-         duration: 0.4
-      })
-      .to('#welcome-message p', {
-         opacity: 0.5,
-         duration: 0.04
-      })
-      .to('#welcome-message p', {
-         opacity: 0.1,
-         duration: 0.3
-      })
-      .to('#welcome-message p', {
-         opacity: 0.55,
-         duration: 0.15
-      })
-      .to('#welcome-message p', {
-         opacity: 0.33,
-         duration: 0.23
-      })
-      .to('#welcome-message p', {
-         opacity: 0.65,
-         duration: 0.05
-      })
-      .to('#welcome-message p', {
-         opacity: 0.15,
-         duration: 0.10
-      })
-      .to('#welcome-message p', {
-         opacity: 0.1,
-         duration: 0.3
-      })
-      .to('#welcome-message p', {
          opacity: 1,
-         duration: 0.3
+         duration: 0.8,
+         ease: 'sine',
+         delay: 0.6
+      })
+      .from('#welcome-contact-div', {
+         top: '100%',
+         opacity: 1,
+         duration: 0.8,
+         ease: 'sine',
+      }, '>-100%')
+      
+      const opacityValues = [0, 0.7, 0.3, 0.5, 0.1, 0.55, 0.33, 0.65, 0.15, 0.1, 1];
+      const durations = [0, 0.2, 0.4, 0.04, 0.3, 0.15, 0.23, 0.05, 0.1, 0.3, 0.3];
+      
+      opacityValues.forEach((opacity, index) => {
+         welcomeMessageTimeline.current.to('#welcome-message p', {
+            opacity: opacity,
+            duration: durations[index]
+         })
+      })
+
+      const mm = gsap.matchMedia()
+   
+      mm.add('(min-width: 720px)', () => {
+         gsap.from('#navbar-title, #menu-icon', {
+            scrollTrigger: {
+               trigger: '#welcome',
+               toggleActions: 'play none none reset',
+               start: 'bottom 60px',
+               end: 'bottom -100px',
+               scrub: true,
+            },
+            translateX: '100%'
+   
+         })
       })
    })
-
+   
    const partOfDay = () => {
       const currentTime = new Date()
 
@@ -129,15 +122,15 @@ const Home = () => {
          </section>
 
          <section id='introduction' >
-
+            
             <h3 className='section-title' >A little bit about myself</h3>
 
             <p id='introduction-p1' className='introduction-p'>
-               I am a very passionate and versatile techie. I wear multiple hats in the tech industry—being a full-stack developer, a data analyst, and an up coming penetration tester.
+               I am a very passionate and versatile techie. I wear multiple hats in the tech industry—being a full-stack developer, a penetration tester, and a database designer.
             </p>
 
             <p id='introduction-p2' className='introduction-p'>
-               This website is your gateway to exploring my journey and the diverse range of skills I bring to the table. Whether you're interested in innovative software projects, cutting-edge data science solutions, or the intricacies of cybersecurity, you'll find it all here.   
+               This website is your gateway to exploring my journey and the diverse range of skills I bring to the table. Whether you're interested in innovative software projects, cutting-edge data science solutions, or the intricacies of database design, you'll find it all here.   
             </p>
 
             <p id='introduction-p3' className='introduction-p'>
@@ -148,44 +141,62 @@ const Home = () => {
 
          <section id='latest-blogs' >
 
-            <h2 className='section-title' >Latest blogs</h2>
-
-            {
-               Object.values(myBlogs).map(blog => (
-                  <div key={ blog.id } >
-                     <h1>{ blog.title }</h1>
-                     <p>{ blog.body }</p>
-                  </div>
-               ))
-            }
+            <h3 className='section-title' >Latest blogs</h3>
+            
+            <div id="blogs">
+               {
+                  Object.values(myBlogs).map(blog => (
+                     <div className="blog-container">
+                        <div className='blog' key={ blog.id } >
+                           <h1>{ blog.title.length > 25 ? `${blog.title.substring(0, 25)}...` : blog.title }</h1>
+                           <p>{ blog.body.substring(0, 25) }...</p>
+                        </div>
+                     </div>
+                  ))
+               }
+            </div>
 
          </section>
 
          <section id='services' >
 
-            <h2 className='section-title' >Services</h2>
+            <h3 className='section-title' >Services</h3>
 
             <div id='service-1' className='service' >
                <h1>Software Engineering</h1>
                <ul>
                   <li>Software Development</li>
+                  <li>Web Application Development</li>
                   <li>Database Design</li>
                   <li>Software Design</li>
                   <li>UI/UX Design</li>
-                  <li>Testing</li>
+                  <li>Software Testing</li>
+                  <li>Business Emails</li>
                </ul>
             </div>
 
             <div id='service-2' className='service' >
+               <h1>Cyber Security</h1>
+               <ul>
+                  <li>Pen Tests (Ethical Hacking)</li>
+                  <li>Vulnerability Assessment</li>
+                  <li>Web Application Security</li>
+                  {/* <li>IDS/IPS</li> */}
+               </ul>
+            </div>
+
+            <div id='service-3' className='service' >
                <h1>Data Analytics</h1>
                <ul>
                   <li>Statistical Analysis</li>
                   <li>Data Visualisation</li>
-                  <li>Building Models</li>
+                  <li>Data Models</li>
+                  <li>Reporting</li>
                </ul>
             </div>
 
          </section>
+
       </div>
    );
 }
