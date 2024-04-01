@@ -156,6 +156,11 @@
   align-items: center;
   min-height: 100svh;
 }
+#home .section-title {
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
 #home #welcome {
   overflow: hidden;
   z-index: 7;
@@ -222,10 +227,7 @@
   width: 100%;
 }
 #home #introduction h3 {
-  font-size: 1.3em;
-  font-weight: 400;
   margin-top: 120px;
-  margin-bottom: 25px;
 }
 #home #introduction p {
   margin: 35px auto;
@@ -236,11 +238,6 @@
 }
 #home #introduction p:nth-child(odd) {
   text-align: end;
-}
-#home #latest-blogs h3 {
-  font-size: 1.3em;
-  font-weight: 400;
-  margin-bottom: 50px;
 }
 #home #latest-blogs #blogs {
   position: relative;
@@ -281,4 +278,21 @@
 #home #latest-blogs .blog-container:nth-child(3) {
   right: -200%;
   background-color: green;
+}
+#home #services .service {
+  text-align: center;
+  margin-top: 50px;
+}
+#home #services .service h1 {
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: #010101;
+}
+#home #services #service-1 {
+  margin-top: 0px;
+}
+#home #services ul {
+  list-style: none;
+  line-height: 2.2em;
 }
