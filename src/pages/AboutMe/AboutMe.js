@@ -47,23 +47,23 @@ const AboutMe = () => {
    // })
 
    return (
-      <div id='aboutme'>
+      <div id='about-me'>
          <section id='profile' >
 
-            <img id="muano" src="/muano3.jpg" alt='muano thebrain makhokha' />
-            <div id='image-overlay'></div>
+            {/* <img id="muano" src="/muano3.jpg" alt='muano thebrain makhokha' /> */}
+            {/* <div id='image-overlay'></div> */}
             <div id='names' >Muano<br/>Makhokha</div>
 
          </section>
 
          <section id='bio' >
 
-            <div id='location' className='bio-section' >
+            {/* <div id='location' className='bio-section' >
                <h2 className='bio-section-title' >Location</h2>
                <p className='p1' >
                   Based in Soweto, Gauteng, South Africa
                </p>
-            </div>
+            </div> */}
 
             <div id='journey' className='bio-section' >
                <h2 className='bio-section-title' >How far I've come</h2>
@@ -74,7 +74,7 @@ const AboutMe = () => {
                   Because of my deep interest in Mathematics, I then pursued my education at the University of the Witwatersrand where I majored in Mathematics and Computer Science. I had never done anything related to computers before and had no clue what it was all about. Looking back at it, it's one of the best decisions I've ever made.
                </p>
                <p className='p3' >
-                  On my first year I did a lot of introduction stuff like binaries, algorithms and data structures and some basic coding using Python and C++. These weren't really fun at all but I still kept it up. It was in my second year where I really started liking it. I saw what those basics were building up to, and I thought to myself "this whole thing of computers is just pure genius". I loved it and that's when I knew that I would be passionate about this field and a few years later it was so.
+                  On my first year I did a lot of introduction stuff like binaries, algorithms and data structures and some basic coding using Python and C++. These weren't really fun at all but I still kept it up. It was in my second year where I really started liking it. I saw what those basics were building up to, and I thought to myself "this whole thing of computers is just pure genius". I loved it and that's when I knew that I would be passionate about this field and a few months later it was so.
                </p>
             </div>
 
@@ -87,7 +87,7 @@ const AboutMe = () => {
                   To most these may be too many skills to focus on, and I agree. But this boils down to my personality. I personally prefer to be a "Jack of all trades". Although my specialty lies in Software Engineering.
                </p>
                <p className='p3' >
-                  I prefer diversity and having the ability to think and solve problems within different environments. Perhaps, this stems from my desire to be an entreprenuer, where it is common to do everything by yourself, especially in the beginning.
+                  I prefer diversity and having the ability to think and solve problems within different environments. Perhaps, this stems from my desire to become an entreprenuer, where it is common to do everything by yourself, especially in the beginning.
                </p>
             </div>
 

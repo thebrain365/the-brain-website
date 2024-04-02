@@ -1,7 +1,6 @@
 #app-container {
-   position: relative;
    font-family: $base-font;
-   font-size: $base-font-size;
+   font-size: $md-font-size;
    font-weight: $base-font-weight;
    background: #fd6602;
    
@@ -19,7 +18,7 @@
       align-items: start;
       color: rgba($accent-2, $alpha: .70);
       text-shadow: none;
-      font-size: 70px;
+      // font-size: 70px;
       text-wrap: nowrap;
 
       h1 {
@@ -31,7 +30,7 @@
       }
 
       .label {
-         font-size: 5em;
+         // font-size: 5em;
       }
 
       #label-2, #label-4 {
