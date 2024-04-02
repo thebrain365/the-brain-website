@@ -23,44 +23,44 @@ const Portfolio = () => {
       }
    ]
 
-   // const toggleContentTimeline = id => {
-   //    const contentTimeline = contentTimelines.find(tl => tl.id === id)
-   //    contentTimeline.timeline.current.reversed(!contentTimeline.timeline.current.reversed())
-   // }
+   const toggleContentTimeline = id => {
+      const contentTimeline = contentTimelines.find(tl => tl.id === id)
+      contentTimeline.timeline.current.reversed(!contentTimeline.timeline.current.reversed())
+   }
 
-   // useGSAP(() => {
-   //    document.querySelectorAll('.content').forEach(content => {
-   //       const contentTimeline = contentTimelines.find(tl => tl.id === content.id)
-   //       contentTimeline.timeline.current =  gsap.timeline()
-   //             .to(content, {
-   //                height: 'auto',
-   //                duration: 0.5,
-   //                ease: 'sine.inOut',
-   //                yoyo: true
-   //             })
-   //             .to(content, {
-   //                opacity: 1,
-   //                duration: 0.5,
-   //                visibility: 'visible',
-   //                ease: 'sine.inOut',
-   //                yoyo: true
-   //             }, 0.3)
-   //             .reverse()
-   //    })
-   // })
+   useGSAP(() => {
+      document.querySelectorAll('.content').forEach(content => {
+         const contentTimeline = contentTimelines.find(tl => tl.id === content.id)
+         contentTimeline.timeline.current =  gsap.timeline()
+               .to(content, {
+                  height: 'auto',
+                  duration: 0.5,
+                  ease: 'sine.inOut',
+                  yoyo: true
+               })
+               .to(content, {
+                  opacity: 1,
+                  duration: 0.5,
+                  visibility: 'visible',
+                  ease: 'sine.inOut',
+                  yoyo: true
+               }, 0.3)
+               .reverse()
+      })
+   })
 
    return (
       <div id='portfolio' >
 
          <h1 id='page-title' >Welcome to my portfolio</h1>
 
-         <section id='education'>
+         <section id='education' className='project'>
 
-            <h2 id='edu-bg-title'>Educational Background</h2>
+            <h2 id='edu-bg-title' className='section-title'>Educational Background</h2>
 
             <h2
                id='wits-title'
-               // onClick={ () => toggleContentTimeline("wits-content") }
+               onClick={ () => toggleContentTimeline("wits-content") }
                typeof='button'
             >
                University of the Witwatersrand<br/>
@@ -99,8 +99,8 @@ const Portfolio = () => {
                   className='up-arrow'
                   onClick={ 
                      () => {
-                        // document.getElementById('wits-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
-                        // toggleContentTimeline("wits-content")
+                        document.getElementById('wits-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
+                        toggleContentTimeline("wits-content")
                      }
                   }
                   typeof='button'
@@ -110,13 +110,13 @@ const Portfolio = () => {
             </div>
          </section>
          
-         <section id='internship-programmes' >
+         <section id='internship-programmes' className='project'>
 
-            <h2 id='internship-programmes-title' >Internship Programmes</h2>
+            <h2 id='internship-programmes-title' className='section-title' >Internship Programmes</h2>
 
             <h2
                id='qyf-title'
-               // onClick={ () => toggleContentTimeline("qyf-internship-content") }
+               onClick={ () => toggleContentTimeline("qyf-internship-content") }
                typeof='button'
             >
                QFY Virtual Intership Programme<br/>
@@ -136,8 +136,8 @@ const Portfolio = () => {
                   className='up-arrow'
                   onClick={
                      () => {
-                        // document.getElementById('qyf-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
-                        // toggleContentTimeline("qyf-internship-content")
+                        document.getElementById('qyf-title').scrollIntoView({ block: 'center', behavior: 'smooth' })
+                        toggleContentTimeline("qyf-internship-content")
                      }
                   }
                   typeof='button'
@@ -147,19 +147,19 @@ const Portfolio = () => {
             </div>
          </section>
 
-         <section id='the-brain-web' >
+         <section id='the-brain-web' className='project'>
 
-            <h2 id='the-brain-web-title' >thebrain.dev</h2>
+            <h2 id='the-brain-web-title' className='section-title' >thebrain.dev</h2>
          </section>
 
-         <section id='mzansi-rents' >
+         <section id='mzansi-rents' className='project'>
 
-            <h2 id='mzansi-rents-title' >MzansiRents</h2>
+            <h2 id='mzansi-rents-title' className='section-title' >MzansiRents</h2>
          </section>
 
-         <section id='a-travel' >
+         <section id='a-travel' className='project'>
 
-            <h2 id='a-travel-title' >A-Travel</h2>
+            <h2 id='a-travel-title' className='section-title' >A-Travel</h2>
          </section>
       </div>
    );
