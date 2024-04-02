@@ -37,7 +37,7 @@
 #navbar-title {
    margin-right: 20px;
    color: transparent;
-   background: $accent-gradient;
+   background: linear-gradient(225deg, $accent-2, $accent-1);
    background-clip: text;
    -webkit-background-clip: text;
 }

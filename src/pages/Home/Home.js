@@ -163,7 +163,7 @@ const Home = () => {
             <h3 className='section-title' >Services</h3>
 
             <div id='service-1' className='service' >
-               <h1>Software Engineering</h1>
+               <h1 className='heading'>Software Engineering</h1>
                <ul>
                   <li>Software Development</li>
                   <li>Web Application Development</li>
@@ -176,7 +176,7 @@ const Home = () => {
             </div>
 
             <div id='service-2' className='service' >
-               <h1>Cyber Security</h1>
+               <h1 className='heading'>Cyber Security</h1>
                <ul>
                   <li>Pen Tests (Ethical Hacking)</li>
                   <li>Vulnerability Assessment</li>
@@ -186,12 +186,12 @@ const Home = () => {
             </div>
 
             <div id='service-3' className='service' >
-               <h1>Data Analytics</h1>
+               <h1 className='heading'>Data Analytics</h1>
                <ul>
                   <li>Statistical Analysis</li>
                   <li>Data Visualisation</li>
                   <li>Data Models</li>
-                  <li>Reporting</li>
+                  <li>Reporting and Analytics</li>
                </ul>
             </div>
 
