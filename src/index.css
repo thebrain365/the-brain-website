@@ -14,6 +14,7 @@
   font-family: poppins;
   font-size: 22.5px;
   font-weight: 300;
+  color: #010101;
   background: #fd6602;
 }
 #app-container #app-bg {
@@ -28,7 +29,7 @@
   color: rgba(255, 115, 0, 0.7);
   text-shadow: none;
   text-wrap: nowrap;
-  font-size: 10em;
+  font-size: 13em;
 }
 #app-container #app-bg h1 {
   position: relative;
@@ -48,6 +49,13 @@
 }
 #app-container #app-bg h1:nth-child(4) {
   transform: translateX(0%);
+}
+#app-container main, #app-container footer {
+  position: relative;
+  text-shadow: 4px 14px 15px #010101;
+  line-height: 1.8em;
+  letter-spacing: 0.5px;
+  background: transparent;
 }
 
 #navbar {

@@ -2,6 +2,7 @@
    font-family: $base-font;
    font-size: $md-font-size;
    font-weight: $base-font-weight;
+   color: $dark;
    background: $accent-3;
    
    // @include lg {
@@ -20,7 +21,7 @@
       color: rgba($accent-2, $alpha: .70);
       text-shadow: none;
       text-wrap: nowrap;
-      font-size: 10em;
+      font-size: 13em;
 
       h1 {
          position: relative;
@@ -45,5 +46,13 @@
             transform: translateX(-0%);
          }
       }
+   }
+
+   main, footer {
+      position: relative;
+      text-shadow: 4px 14px 15px $dark;
+      line-height: $line-height;
+      letter-spacing: $letter-spacing;
+      background: transparent;
    }
 }
