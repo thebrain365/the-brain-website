@@ -57,9 +57,17 @@
       padding: 0px 15px;
 
       .section-title {
-         font-size: $lg-font-size;
+         font-size: $xl-font-size;
          font-weight: 400;
          margin-bottom: $md-spacing;
+      }
+
+      .heading {
+         color: $light;
+         text-align: center;
+         font-size: $lg-font-size;
+         font-weight: $heading-font-weight;
+         margin-bottom: $sm-spacing;
       }
       
       ul {

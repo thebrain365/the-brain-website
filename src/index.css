@@ -12,7 +12,7 @@
 
 #app-container {
   font-family: poppins;
-  font-size: 22.5px;
+  font-size: 21px;
   font-weight: 300;
   color: #010101;
   background: #fd6602;
@@ -59,16 +59,23 @@
   padding: 0px 15px;
 }
 #app-container main .section-title, #app-container footer .section-title {
-  font-size: 33.75px;
+  font-size: 36.855px;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
+}
+#app-container main .heading, #app-container footer .heading {
+  color: #f5f5f5;
+  text-align: center;
+  font-size: 28.35px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 #app-container main ul, #app-container footer ul {
   list-style: none;
   text-align: center;
 }
 #app-container main p, #app-container footer p {
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 #navbar {
@@ -207,6 +214,7 @@
 }
 #home #welcome #welcome-message h1 {
   position: relative;
+  padding-bottom: 7px;
   font-size: 100px;
   font-weight: 400;
   width: max-content;
@@ -218,6 +226,7 @@
   -webkit-text-stroke: 1px rgba(245, 245, 245, 0.15);
 }
 #home #welcome #welcome-message p {
+  margin-bottom: 0;
   font-weight: 500;
   text-shadow: 0px 0px 15px #0ff, 0px 0px 25px #00f, 0px 0px 35px #0ff, 0px 0px 45px #00f, 0px 0px 55px #00f, 0px 0px 65px #00f, 0px 0px 75px #00f, 0px 0px 85px #00f, 0px 0px 95px #00f;
 }
@@ -254,7 +263,7 @@
 #home #latest-blogs .blog {
   background-color: rgba(1, 1, 1, 0.15);
   height: 90%;
-  width: 80%;
+  width: 90%;
   text-align: center;
   text-shadow: none;
   border: 1px solid #f5f5f5;
@@ -285,4 +294,7 @@
 }
 #home #latest-blogs .blog-container:nth-child(3) {
   right: -200%;
+}
+#home #services .service {
+  margin-bottom: 35px;
 }

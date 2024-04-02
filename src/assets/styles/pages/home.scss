@@ -49,6 +49,7 @@
    
          h1 {
             position: relative;
+            padding-bottom: 7px;
             font-size: 100px;
             font-weight: 400;
             width: max-content;
@@ -61,6 +62,7 @@
          }
          
          p {
+            margin-bottom: 0;
             font-weight: 500;
             text-shadow: 
                0px 0px 15px #0ff,
@@ -118,7 +120,7 @@
       .blog {
          background-color: rgba($dark, $alpha: .15);
          height: 90%;
-         width: 80%;
+         width: 90%;
          text-align: center;
          text-shadow: none;
          border: 1px solid $light;
@@ -158,21 +160,10 @@
       }
    }
 
-   // #services {
-   //    padding-bottom: 120px;
-
-   //    .service {
-   //       text-align: center;
-   //       margin-top: 50px;
-
-   //       h1 {
-   //          font-size: 1.1em;
-   //          font-weight: 400;
-   //          margin-bottom: 30px;
-   //          color: $dark;
-   //       }
-   //    }
-
+   #services {
+      .service {
+         margin-bottom: $md-spacing;
+      }
    //    #service-1 {
    //       margin-top: 20px;
    //    }
@@ -181,5 +172,5 @@
    //       list-style: none;
    //       line-height: 2.2em;
    //    }
-   // }
+   }
 }
