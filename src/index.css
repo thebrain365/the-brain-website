@@ -173,12 +173,13 @@
 #home section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100svh;
+  padding-top: 70px;
 }
 #home #welcome {
   position: relative;
+  padding-top: 0;
   width: 100svw;
   background-image: url("/public/bg-image.jpg");
   background-size: auto 100lvh;
@@ -234,9 +235,54 @@
   width: auto;
   height: 40%;
 }
-#home #introduction {
-  padding-top: 120px;
-}
 #home #introduction h3 {
   text-align: center;
+}
+#home #latest-blogs #blogs {
+  position: relative;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  background-color: transparent;
+  display: flex;
+  align-self: center;
+  width: 100svw;
+  height: 80svh;
+}
+#home #latest-blogs #blogs::-webkit-scrollbar {
+  display: none;
+}
+#home #latest-blogs .blog {
+  background-color: rgba(1, 1, 1, 0.15);
+  height: 90%;
+  width: 80%;
+  text-align: center;
+  text-shadow: none;
+  border: 1px solid #f5f5f5;
+  border-radius: 5px;
+  padding: 50px 20px;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+#home #latest-blogs .blog h1 {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 20px;
+}
+#home #latest-blogs .blog-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+#home #latest-blogs .blog-container:nth-child(1) {
+  right: 0%;
+}
+#home #latest-blogs .blog-container:nth-child(2) {
+  right: -100%;
+}
+#home #latest-blogs .blog-container:nth-child(3) {
+  right: -200%;
 }
