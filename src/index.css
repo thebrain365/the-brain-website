@@ -361,3 +361,36 @@
   text-align: center;
   text-decoration: underline;
 }
+
+#portfolio {
+  position: relative;
+  padding-top: 100px;
+}
+#portfolio #page-title {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  color: #000;
+  font-size: 1.8em;
+  font-weight: 500;
+}
+#portfolio h1, #portfolio h2, #portfolio h3 {
+  user-select: none;
+}
+#portfolio .project {
+  border-bottom: 1px solid #000;
+}
+#portfolio #education #wits-content h3 {
+  color: #000;
+}
+#portfolio .section-title {
+  border-bottom: 1px solid #000;
+  color: #000;
+}
+#portfolio .content {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+}
+#portfolio .up-arrow {
+  text-align: end;
+}
