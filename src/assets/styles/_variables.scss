@@ -16,7 +16,7 @@ $xs-font-size: 10px;
 $sm-font-size: $xs-font-size * 1.5;
 $md-font-size: $sm-font-size * 1.5;
 $lg-font-size: $md-font-size * 1.5;
-$xl-font-size: $xl-font-size * 1.5;
+$xl-font-size: $lg-font-size * 1.5;
 
 $base-font-weight: 300;
 $heading-font-weight: 500;
@@ -30,6 +30,8 @@ $sm-spacing: $xs-spacing * 2;
 $md-spacing: $sm-spacing * 2;
 $lg-spacing: $md-spacing * 2;
 $xl-spacing: $lg-spacing * 2;
+
+$navbar-height: 70px;
 
 // Border and Radius
 
