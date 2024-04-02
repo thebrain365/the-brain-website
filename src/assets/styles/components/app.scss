@@ -57,6 +57,7 @@
       padding: 0px 15px;
 
       .section-title {
+         color: $accent-1;
          font-size: $xl-font-size;
          font-weight: 400;
          margin-bottom: $md-spacing;
@@ -73,6 +74,12 @@
       ul {
          list-style: none;
          text-align: center;
+
+         li {            
+            &:nth-child(even) {
+               color: $accent-1;
+            }
+         }
       }
 
       p {

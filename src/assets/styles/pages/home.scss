@@ -108,6 +108,7 @@
          -ms-overflow-style: none;
          background-color: transparent;
          display: flex;
+         align-items: start;
          align-self: center;
          width: 100svw;
          height: 80svh;
@@ -118,21 +119,23 @@
       }
 
       .blog {
-         background-color: rgba($dark, $alpha: .15);
-         height: 90%;
-         width: 90%;
+         background-color: rgba(red, $alpha: .35);
+         height: 80%;
+         width: 85%;
+         margin-top: $md-spacing;
          text-align: center;
          text-shadow: none;
-         border: 1px solid $light;
+         // border: 1px solid $accent-1;
          border-radius: 5px;
          padding: 50px 20px;
          backdrop-filter: blur(3px);
          -webkit-backdrop-filter: blur(3px);
+         box-shadow: 0px 15px 45px 0px rgba($dark, $alpha: .7);
 
          h1 {
             font-size: 1.2em;
             font-weight: 500;
-            color: black;
+            color: $light;
             margin-bottom: 20px;
          }
       }
@@ -141,7 +144,7 @@
          position: absolute;
          display: flex;
          justify-content: center;
-         align-items: center;
+         align-items: start;
          height: 100%;
          width: 100%;
 

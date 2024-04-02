@@ -59,6 +59,7 @@
   padding: 0px 15px;
 }
 #app-container main .section-title, #app-container footer .section-title {
+  color: #fff500;
   font-size: 36.855px;
   font-weight: 400;
   margin-bottom: 35px;
@@ -73,6 +74,9 @@
 #app-container main ul, #app-container footer ul {
   list-style: none;
   text-align: center;
+}
+#app-container main ul li:nth-child(even), #app-container footer ul li:nth-child(even) {
+  color: #fff500;
 }
 #app-container main p, #app-container footer p {
   margin-bottom: 35px;
@@ -253,6 +257,7 @@
   -ms-overflow-style: none;
   background-color: transparent;
   display: flex;
+  align-items: start;
   align-self: center;
   width: 100svw;
   height: 80svh;
@@ -261,28 +266,29 @@
   display: none;
 }
 #home #latest-blogs .blog {
-  background-color: rgba(1, 1, 1, 0.15);
-  height: 90%;
-  width: 90%;
+  background-color: rgba(255, 0, 0, 0.35);
+  height: 80%;
+  width: 85%;
+  margin-top: 35px;
   text-align: center;
   text-shadow: none;
-  border: 1px solid #f5f5f5;
   border-radius: 5px;
   padding: 50px 20px;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0px 15px 45px 0px rgba(1, 1, 1, 0.7);
 }
 #home #latest-blogs .blog h1 {
   font-size: 1.2em;
   font-weight: 500;
-  color: black;
+  color: #f5f5f5;
   margin-bottom: 20px;
 }
 #home #latest-blogs .blog-container {
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   height: 100%;
   width: 100%;
 }

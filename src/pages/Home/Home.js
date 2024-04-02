@@ -28,7 +28,7 @@ const Home = () => {
       '2': {
          'id': 2,
          'title': 'How to think of software in the context of your business',
-         'body': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit necessitatibus dolorem dignissimos tempore similique voluptatum!'
+         'body': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, dicta odio architecto doloribus quidem sapiente iusto molestiae magni sint nobis earum asperiores laboriosam molestias quis excepturi at temporibus possimus aperiam. Illum rerum similique molestiae ipsa facilis commodi? Amet officiis voluptate rem quod sit, voluptatem mollitia commodi error tempora ipsam laboriosam ducimus eos ipsum necessitatibus dolore. Quod nemo ipsam porro voluptatem provident beatae assumenda ea alias nihil maiores odio iusto deleniti illum quam hic sapiente perferendis voluptatum soluta quibusdam tempora atque, rerum nulla omnis? Commodi, at animi exercitationem veritatis doloribus corporis assumenda eveniet dolores ab beatae accusamus ut sapiente fuga error, fugit consectetur, voluptatibus velit recusandae laudantium vero enim autem. Enim quod nemo eos, laboriosam non, vel animi accusantium alias incidunt, iure corrupti ducimus provident. Accusantium saepe nesciunt reiciendis consequuntur, non sequi fugiat adipisci eius modi alias! Sunt voluptatibus quae et, iusto minima officiis alias? Molestiae architecto eligendi eveniet itaque perferendis voluptas libero laudantium. Libero, aut nisi. Nostrum tenetur officia numquam doloribus adipisci fugiat eligendi ipsa eveniet molestiae repellat odio placeat neque nemo, similique atque rerum blanditiis! Quis quidem quam eius.'
       },
       '3': {
          'id': 3,
@@ -148,8 +148,9 @@ const Home = () => {
                   Object.values(myBlogs).map(blog => (
                      <div className="blog-container">
                         <div className='blog' key={ blog.id } >
-                           <h1>{ blog.title.length > 25 ? `${blog.title.substring(0, 25)}...` : blog.title }</h1>
-                           <p>{ blog.body.substring(0, 25) }...</p>
+                           <h1>{ blog.title.length > 35 ? `${blog.title.substring(0, 35)}...` : blog.title }</h1>
+                           {/* <p>{ blog.body.substring(0, 150) }...</p> */}
+                           <p>{ blog.body.length > 150 ? `${blog.body.substring(0, 150)}...` : blog.body }</p>
                         </div>
                      </div>
                   ))
@@ -166,7 +167,7 @@ const Home = () => {
                <h1 className='heading'>Software Engineering</h1>
                <ul>
                   <li>Software Development</li>
-                  <li>Web Application Development</li>
+                  <li>Web and Mobile Application Development</li>
                   <li>Database Design</li>
                   <li>Software Design</li>
                   <li>UI/UX Design</li>
@@ -180,7 +181,7 @@ const Home = () => {
                <ul>
                   <li>Pen Tests (Ethical Hacking)</li>
                   <li>Vulnerability Assessment</li>
-                  <li>Web Application Security</li>
+                  <li>Web and mobile Application Security</li>
                   {/* <li>IDS/IPS</li> */}
                </ul>
             </div>
