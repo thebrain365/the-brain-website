@@ -59,12 +59,16 @@
       .section-title {
          font-size: $lg-font-size;
          font-weight: 400;
-         margin-bottom: 25px;
+         margin-bottom: $md-spacing;
       }
       
       ul {
          list-style: none;
          text-align: center;
+      }
+
+      p {
+         margin-bottom: $md-spacing;
       }
    }
 }

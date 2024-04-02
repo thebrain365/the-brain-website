@@ -61,11 +61,14 @@
 #app-container main .section-title, #app-container footer .section-title {
   font-size: 33.75px;
   font-weight: 400;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 #app-container main ul, #app-container footer ul {
   list-style: none;
   text-align: center;
+}
+#app-container main p, #app-container footer p {
+  margin-bottom: 40px;
 }
 
 #navbar {
@@ -196,6 +199,7 @@
   bottom: 15svh;
   color: #00C2FF;
   width: 100%;
+  padding-left: 12px;
   margin: 0;
   line-height: 3.6em;
   text-transform: lowercase;
@@ -229,4 +233,10 @@
 #home #welcome #welcome-contact-div .welcome-contact-div-icons {
   width: auto;
   height: 40%;
+}
+#home #introduction {
+  padding-top: 120px;
+}
+#home #introduction h3 {
+  text-align: center;
 }

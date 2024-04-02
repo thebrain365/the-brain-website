@@ -19,7 +19,6 @@
       background-position: 25% 0%;
       background-repeat: no-repeat;
 
-   //    overflow: hidden;
       z-index: 7;
    
       
@@ -42,7 +41,7 @@
          bottom: 15svh;
          color: $primary;
          width: 100%;
-         // padding-left: 12px;
+         padding-left: 12px;
          margin: 0;
          line-height: $line-height * 2;
          text-transform: lowercase;
@@ -92,25 +91,13 @@
       }
    }
 
-   // #introduction {
-   //    width: 100%;
+   #introduction {
+      padding-top: 120px;
    
-   //    h3 {
-   //       margin-top: 120px;
-   //    }
-      
-   //    p {
-   //       margin: 35px auto;
-   
-   //       &:last-child {
-   //          margin-bottom: 0px;
-   //       }
-
-   //       &:nth-child(odd) {
-   //          text-align: end;
-   //       }
-   //    }
-   // }
+      h3 {
+         text-align: center;
+      }
+   }
 
    // #latest-blogs {
    //    #blogs {
