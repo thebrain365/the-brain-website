@@ -54,5 +54,17 @@
       line-height: $line-height;
       letter-spacing: $letter-spacing;
       background: transparent;
+      padding: 0px 15px;
+
+      .section-title {
+         font-size: $lg-font-size;
+         font-weight: 400;
+         margin-bottom: 25px;
+      }
+      
+      ul {
+         list-style: none;
+         text-align: center;
+      }
    }
 }
