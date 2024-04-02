@@ -71,11 +71,23 @@
   font-weight: 500;
   margin-bottom: 20px;
 }
-#app-container main ul, #app-container footer ul {
-  list-style: none;
+#app-container main .sub-heading, #app-container footer .sub-heading {
+  color: #010101;
   text-align: center;
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-decoration: underline;
 }
-#app-container main ul li:nth-child(even), #app-container footer ul li:nth-child(even) {
+#app-container main .list, #app-container footer .list {
+  text-align: center;
+  margin-bottom: 35px;
+}
+#app-container main .list span, #app-container footer .list span {
+  display: inline-block;
+  margin: 7px;
+}
+#app-container main .list span:nth-child(even), #app-container footer .list span:nth-child(even) {
   color: #fff500;
 }
 #app-container main p, #app-container footer p {
@@ -303,4 +315,11 @@
 }
 #home #services .service {
   margin-bottom: 35px;
+}
+
+#services {
+  padding-top: 101.5px;
+}
+#services section ul {
+  margin-bottom: 40px;
 }

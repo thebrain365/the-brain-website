@@ -70,12 +70,22 @@
          font-weight: $heading-font-weight;
          margin-bottom: $sm-spacing;
       }
-      
-      ul {
-         list-style: none;
-         text-align: center;
 
-         li {            
+      .sub-heading {
+         color: $dark;
+         text-align: center;
+         font-size: $md-font-size;
+         font-weight: $heading-font-weight;
+         margin-bottom: $sm-spacing;
+         text-decoration: underline;
+      }
+      
+      .list {
+         text-align: center;
+         margin-bottom: $md-spacing;
+         span {
+            display: inline-block;
+            margin: 7px;     
             &:nth-child(even) {
                color: $accent-1;
             }

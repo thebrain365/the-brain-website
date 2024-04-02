@@ -6,7 +6,7 @@ const Services = () => {
 
          <section id='software-engineering' className="service" >
 
-            <h1 className='service-title' >Software Engineering</h1>
+            <h1 className='section-title' >Software Engineering</h1>
 
             <div className='service-description' >
                <p>
@@ -24,42 +24,45 @@ const Services = () => {
             </div>
 
             <div className='service-tools' >
-               <h3>
-                  Tech Stack
-               </h3>
-               <h4>
-                  Programming Languages
-               </h4>
-               <ul>
-                  <li>Java EE</li>
-                  <li>JavaScript</li>
-                  <li>Python</li>
-                  <li>HTML/CSS</li>
-               </ul>
-               <h4>
-                  Frameworks
-               </h4>
-               <ul>
-                  <li>Spring Framework (including Spring Boot, Spring MVC, Spring Security, Spring Data JPA)</li>
-                  <li>Hibernate</li>
-                  <li>React.Js</li>
-                  <li>Node.js</li>
-               </ul>
-               <h4>
-                  Tools and Technology
-               </h4>
-               <ul>
-                  <li>Android Studio</li>
-                  <li>Green Sock Animation Platform (GSAP)</li>
-                  <li>Git/GitHub</li>
-                  <li>GitHub Actions</li>
-                  <li>Docker</li>
-               </ul>
+               <h3 className='heading'>Tech Stack</h3>
+               <h4 className='sub-heading'>Programming Languages</h4>
+               <div className='list'>
+                  <span>Java (SE & EE)</span>
+                  <span>JavaScript</span>
+                  <span>Python</span>
+                  <span>HTML/CSS</span>
+               </div>
+               <h4 className='sub-heading'>Frameworks</h4>
+               <div className='list'>
+                  <span>Spring Framework</span>
+                  <span>Spring Boot</span>
+                  <span>Spring MVC</span>
+                  <span>Spring Security</span>
+                  <span>Spring Data</span>
+                  <span>React.Js</span>
+                  <span>Next.Js</span>
+                  <span>Node.js</span>
+               </div>
+               <h4 className='sub-heading'>Tools and Technology</h4>
+               <div className='list'>
+                  <span>Android Studio</span>
+                  <span>SQL</span>
+                  <span>NoSQL</span>
+                  <span>GraphQL</span>
+                  <span>GSAP</span>
+                  <span>Git/GitHub</span>
+                  <span>GitHub Actions</span>
+                  <span>Docker</span>
+                  <span>Firebase</span>
+                  <span>Sass</span>
+                  <span>WordPress</span>
+                  <span>Strapi</span>
+               </div>
             </div>
          </section>
 
          <section id="cyber-security" className="service">
-            <h1 className="service-title">Cyber Security</h1>
+            <h1 className="section-title">Cyber Security</h1>
 
             <div className="service-description">
                <p>
@@ -72,13 +75,12 @@ const Services = () => {
             </div>
 
             <div className="service-tools">
-               <h3>Tech Stack</h3>
             </div>
          </section>
 
          <section id='database-design' className="service" >
 
-            <h1 className='service-title' >Database Design and Implementation</h1>
+            <h1 className='section-title' >Database Design and Implementation</h1>
 
             <div className='service-description' >
                <p>
@@ -90,15 +92,12 @@ const Services = () => {
             </div>
 
             <div className='service-tools' >
-               <h3>
-                  Tech Stack
-               </h3>
             </div>
          </section>
 
          <section id='data-analytics' className="service" >
 
-            <h1 className='service-title' >Data Analytics</h1>
+            <h1 className='section-title' >Data Science and Machine Learning</h1>
 
             <div className='service-description' >
                <p>
@@ -110,15 +109,18 @@ const Services = () => {
             </div>
 
             <div className='service-tools' >
-               <h3>
-                  Tech Stack
-               </h3>
-               <ul>
-                  <li>Python</li>
-                  <li>Microsoft Excel</li>
-                  <li>Microsoft Powerpoint</li>
-                  <li>Power BI</li>
-               </ul>
+               <h3 className='heading'>Tools</h3>
+               <div className='list'>
+                  <span>Python</span>
+                  <span>Jupyter Notebook</span>
+                  <span>Pandas</span>
+                  <span>PyTorch</span>
+                  <span>TensorFlow</span>
+                  <span>Numpy</span>
+                  <span>MS Excel</span>
+                  <span>MS Powerpoint</span>
+                  <span>Power BI</span>
+               </div>
             </div>
 
          </section>

@@ -1,10 +1,7 @@
 #services {
-   // background-color: transparent;
-   // color: $light;
-   // text-shadow: 4px 33px 15px $dark;
-   // padding-top: 120px;
+   padding-top: $navbar-height + ($navbar-height * 0.45);
 
-   // section {
+   section {
    //    position: relative;
    //    display: flex;
    //    flex-direction: column;
@@ -44,13 +41,10 @@
    //       color: $dark;
    //    }
       
-   //    ul {
-   //       list-style: none;
-   //       line-height: 2.2em;
-   //       text-align: center;
-   //       margin-top: 20px;
-   //    }
-   // }
+      ul {
+         margin-bottom: 40px;
+      }
+   }
 
    // .service-title {
    //    font-size: 1.3em;

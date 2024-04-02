@@ -165,35 +165,35 @@ const Home = () => {
 
             <div id='service-1' className='service' >
                <h1 className='heading'>Software Engineering</h1>
-               <ul>
-                  <li>Software Development</li>
-                  <li>Web and Mobile Application Development</li>
-                  <li>Database Design</li>
-                  <li>Software Design</li>
-                  <li>UI/UX Design</li>
-                  <li>Software Testing</li>
-                  <li>Business Emails</li>
-               </ul>
+               <div className='list'>
+                  <span>Software Development</span>
+                  <span>Web and Mobile Application Development</span>
+                  <span>Database Design</span>
+                  <span>Software Design</span>
+                  <span>UI/UX Design</span>
+                  <span>Software Testing</span>
+                  <span>Business Emails</span>
+               </div>
             </div>
 
             <div id='service-2' className='service' >
                <h1 className='heading'>Cyber Security</h1>
-               <ul>
-                  <li>Pen Tests (Ethical Hacking)</li>
-                  <li>Vulnerability Assessment</li>
-                  <li>Web and mobile Application Security</li>
-                  {/* <li>IDS/IPS</li> */}
-               </ul>
+               <div className='list'>
+                  <span>Pen Tests (Ethical Hacking)</span>
+                  <span>Vulnerability Assessment</span>
+                  <span>Web and mobile Application Security</span>
+                  <span>IDS/IPS</span>
+               </div>
             </div>
 
             <div id='service-3' className='service' >
                <h1 className='heading'>Data Analytics</h1>
-               <ul>
-                  <li>Statistical Analysis</li>
-                  <li>Data Visualisation</li>
-                  <li>Data Models</li>
-                  <li>Reporting and Analytics</li>
-               </ul>
+               <div className='list'>
+                  <span>Statistical Analysis</span>
+                  <span>Data Visualisation</span>
+                  <span>Data Models</span>
+                  <span>Reporting and Analytics</span>
+               </div>
             </div>
 
          </section>
