@@ -179,9 +179,11 @@ const Home = () => {
             <div id='service-2' className='service' >
                <h1 className='heading'>Cyber Security</h1>
                <div className='list'>
-                  <span>Pen Tests (Ethical Hacking)</span>
+                  <span>Pen Tests</span>
+                  <span>Ethical Hacking</span>
                   <span>Vulnerability Assessment</span>
                   <span>Web and mobile Application Security</span>
+                  <span>Network Security</span>
                   <span>IDS/IPS</span>
                </div>
             </div>

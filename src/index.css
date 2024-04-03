@@ -63,6 +63,8 @@
   font-size: 36.855px;
   font-weight: 400;
   margin-bottom: 35px;
+  text-align: center;
+  user-select: none;
 }
 #app-container main .heading, #app-container footer .heading {
   color: #f5f5f5;
@@ -70,6 +72,11 @@
   font-size: 28.35px;
   font-weight: 500;
   margin-bottom: 20px;
+  user-select: none;
+}
+#app-container main .heading span, #app-container footer .heading span {
+  font-size: 15px;
+  user-select: none;
 }
 #app-container main .sub-heading, #app-container footer .sub-heading {
   color: #010101;
@@ -78,6 +85,7 @@
   font-weight: 500;
   margin-bottom: 20px;
   text-decoration: underline;
+  user-select: none;
 }
 #app-container main .list, #app-container footer .list {
   text-align: center;
@@ -196,7 +204,6 @@
 #home section {
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100svh;
   padding-top: 70px;
 }
@@ -322,4 +329,29 @@
 }
 #services section ul {
   margin-bottom: 40px;
+}
+
+#portfolio {
+  padding-top: 70px;
+}
+#portfolio section {
+  padding-top: 70px;
+  border-bottom: 1px solid #000;
+}
+#portfolio .heading {
+  cursor: pointer;
+}
+#portfolio .section-title {
+  border-bottom: 1px solid #010101;
+  padding-bottom: 35px;
+}
+#portfolio .content {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  padding-bottom: 30px;
+}
+#portfolio .up-arrow {
+  margin-right: 15%;
+  text-align: end;
 }
