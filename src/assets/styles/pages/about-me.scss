@@ -1,4 +1,56 @@
 #about-me {
-   // position: relative;
-   // background-color: transparent;
+   padding-top: $navbar-height;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+   #profile {
+      position: relative;
+
+      #muano {
+         position: relative;
+         width: 100svw;
+      }
+
+      #names {
+         position: absolute;
+         font-size: $xl-font-size * 2;
+         font-weight: $heading-font-weight;
+         line-height: $line-height * 0.8;
+         padding-left: $xs-spacing;
+         bottom: 5%;
+         color: transparent;
+         background: linear-gradient(270deg, $accent-3 , red);
+         background-clip: text;
+         -webkit-background-clip: text;
+         text-shadow: none;
+      }
+
+      #quote {
+         position: absolute;
+         width: 100%;
+         text-align: end;
+         font-size: $lg-font-size * 0.8;
+         font-weight: $heading-font-weight;
+         line-height: $line-height * 0.8;
+         padding-right: $xs-spacing;
+         top: 5%;
+         color: transparent;
+         background: rgba($dark, $alpha: .30);
+         background-clip: text;
+         -webkit-background-clip: text;
+         text-shadow: none;
+      }
+   }
+
+   #bio {
+      padding-top: $navbar-height;
+
+      #qoutes {
+         p {
+            color: $light;
+            font-weight: $heading-font-weight;
+         }
+      }
+   }
 }
