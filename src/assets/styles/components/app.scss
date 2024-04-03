@@ -57,9 +57,12 @@
       padding: 0px 15px;
 
       .section-title {
+         color: $accent-1;
          font-size: $xl-font-size;
          font-weight: 400;
          margin-bottom: $md-spacing;
+         text-align: center;
+         user-select: none;
       }
 
       .heading {
@@ -68,11 +71,35 @@
          font-size: $lg-font-size;
          font-weight: $heading-font-weight;
          margin-bottom: $sm-spacing;
+         user-select: none;
+
+
+         span {
+            font-size: $sm-font-size;
+            user-select: none;
+         }
+      }
+
+      .sub-heading {
+         color: $dark;
+         text-align: center;
+         font-size: $md-font-size;
+         font-weight: $heading-font-weight;
+         margin-bottom: $sm-spacing;
+         text-decoration: underline;
+         user-select: none;
       }
       
-      ul {
-         list-style: none;
+      .list {
          text-align: center;
+         margin-bottom: $md-spacing;
+         span {
+            display: inline-block;
+            margin: 7px;     
+            &:nth-child(even) {
+               color: $accent-1;
+            }
+         }
       }
 
       p {

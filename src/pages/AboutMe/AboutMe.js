@@ -50,28 +50,32 @@ const AboutMe = () => {
       <div id='about-me'>
          <section id='profile' >
 
-            {/* <img id="muano" src="/muano3.jpg" alt='muano thebrain makhokha' /> */}
+            <img id="muano" src="/muano4.jpg" alt='muano thebrain makhokha' />
             {/* <div id='image-overlay'></div> */}
-            <div id='names' >Muano<br/>Makhokha</div>
+            <div id="quote">your choices are your legacy</div>
+            <div id='names' >
+               <h1>Muano</h1>
+               <h1>Makhokha</h1>
+            </div>
 
          </section>
 
          <section id='bio' >
 
             {/* <div id='location' className='bio-section' >
-               <h2 className='bio-section-title' >Location</h2>
+               <h2 className='section-title' >Location</h2>
                <p className='p1' >
                   Based in Soweto, Gauteng, South Africa
                </p>
             </div> */}
 
             <div id='journey' className='bio-section' >
-               <h2 className='bio-section-title' >How far I've come</h2>
+               <h2 className='section-title' >How far I've come</h2>
                <p className='p1' >
-                  I grew up in Muledane, Thohoyandou and I attended Thohoyandou Technical High School, where I did Mathematics, Physical Sciences, Civil Technology, and Engineering Graphics and Design. I excelled in all of these subjects, and what I liked most about them was that they helped me to become a creative person.
+                  I grew up in Muledane, Thohoyandou. I attended Thohoyandou Technical High School, where I did Mathematics, Physical Sciences, Civil Technology, and Engineering Graphics and Design. I excelled in all of these subjects, and what I liked most about them was that they helped me to become a creative person.
                </p>
                <p className='p2' >
-                  Because of my deep interest in Mathematics, I then pursued my education at the University of the Witwatersrand where I majored in Mathematics and Computer Science. I had never done anything related to computers before and had no clue what it was all about. Looking back at it, it's one of the best decisions I've ever made.
+                  Because of my deep interest in Mathematics, I then pursued my education at the University of the Witwatersrand where I majored in Mathematics and Computer Science. I had never done anything related to computers before and I had no clue what it was all about. Looking back at it, it's one of the best decisions I've ever made.
                </p>
                <p className='p3' >
                   On my first year I did a lot of introduction stuff like binaries, algorithms and data structures and some basic coding using Python and C++. These weren't really fun at all but I still kept it up. It was in my second year where I really started liking it. I saw what those basics were building up to, and I thought to myself "this whole thing of computers is just pure genius". I loved it and that's when I knew that I would be passionate about this field and a few months later it was so.
@@ -79,12 +83,12 @@ const AboutMe = () => {
             </div>
 
             <div id='where-to-next' className='bio-section' >
-               <h2 className='bio-section-title' >Where to next</h2>
+               <h2 className='section-title' >Where to next</h2>
                <p className='p1' >
                   Along my journey in Computer Science I came across multiple areas that have sparked my interest. Which are Software Engineering, Data Science and Cyber Security. To me, these are very different areas, and the difference I appreciate the most is the process of thinking within each area.
                </p>
                <p className='p2' >
-                  To most these may be too many skills to focus on, and I agree. But this boils down to my personality. I personally prefer to be a "Jack of all trades". Although my specialty lies in Software Engineering.
+                  To most these may be too many skills to focus on, and I agree. But this boils down to my personality. I like Technology so much that I spend the majority of my spare time practicing or reading something related to it.
                </p>
                <p className='p3' >
                   I prefer diversity and having the ability to think and solve problems within different environments. Perhaps, this stems from my desire to become an entreprenuer, where it is common to do everything by yourself, especially in the beginning.
@@ -92,14 +96,14 @@ const AboutMe = () => {
             </div>
 
             <div id='interests' className='bio-section' >
-               <h2 className='bio-section-title' >Interests</h2>
+               <h2 className='section-title' >Interests</h2>
                <p className='p1' >
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi iusto repellendus optio, laborum ut ex quos consequuntur pariatur tempore est.
                </p>
             </div>
 
             <div id='qoutes' className='bio-section' >
-               <h2 className='bio-section-title' >Favourite quotes</h2>
+               <h2 className='section-title' >Favourite quotes</h2>
                <p>
                   A man who does more than he is paid for... will soon be paid for more than he does.
                </p>
