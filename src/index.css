@@ -122,28 +122,28 @@
 
 #logo-container {
   display: none;
+  cursor: pointer;
 }
-@media (min-width: 720px) {
+#logo-container #brain-logo {
+  height: 100%;
+}
+#logo-container #brain-logo path {
+  fill: #ff7300;
+}
+@media (min-width: 0px) {
   #logo-container {
     display: block;
     height: 100%;
-    flex-grow: 1;
   }
 }
 
-#brain-logo {
-  height: 100%;
-}
-#brain-logo path {
-  fill: #ff7300;
-}
-
 #navbar-title {
-  margin-right: 20px;
+  margin-left: 20px;
   color: transparent;
   background: linear-gradient(225deg, #ff7300, #fff500);
   background-clip: text;
   -webkit-background-clip: text;
+  flex-grow: 1;
 }
 
 #menu-icon {
