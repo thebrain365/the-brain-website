@@ -1,3 +1,14 @@
 #blog-view {
    padding-top: $navbar-height;
+
+   h1 {
+      @extend .section-title;
+      font-size: $xl-font-size;
+   }
+
+   code {
+      text-shadow: none;
+      font-family: 'source code pro';
+      font-size: $sm-font-size;
+   }
 }

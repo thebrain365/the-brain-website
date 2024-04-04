@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +14,7 @@
   font-family: poppins;
   font-size: 21px;
   font-weight: 300;
+  font-weight: 400;
   color: #010101;
   background: #fd6602;
 }
@@ -58,7 +59,7 @@
   background: transparent;
   padding: 0px 15px;
 }
-#app-container main .section-title, #app-container footer .section-title {
+#app-container main .section-title, #app-container main #blog-view h1, #blog-view #app-container main h1, #app-container footer .section-title, #app-container footer #blog-view h1, #blog-view #app-container footer h1 {
   color: #fff500;
   font-size: 36.855px;
   font-weight: 400;
@@ -199,6 +200,14 @@
 #blog-view {
   padding-top: 70px;
 }
+#blog-view h1 {
+  font-size: 36.855px;
+}
+#blog-view code {
+  text-shadow: none;
+  font-family: "source code pro";
+  font-size: 15px;
+}
 
 #home {
   display: flex;
@@ -271,9 +280,6 @@
   width: auto;
   height: 40%;
 }
-#home #introduction h3 {
-  text-align: center;
-}
 #home #latest-blogs #blogs {
   position: relative;
   overflow: scroll;
@@ -344,10 +350,6 @@
   margin-bottom: 40px;
 }
 
-#blogs {
-  padding-top: 70px;
-}
-
 #portfolio {
   padding-top: 70px;
 }
@@ -358,7 +360,7 @@
 #portfolio .heading {
   cursor: pointer;
 }
-#portfolio .section-title {
+#portfolio .section-title, #portfolio #blog-view h1, #blog-view #portfolio h1 {
   border-bottom: 1px solid #010101;
   padding-bottom: 35px;
 }
