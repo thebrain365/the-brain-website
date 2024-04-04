@@ -18,28 +18,30 @@
 
 #logo-container {
    display: none;
+   cursor: pointer;
 
-   @include md {
+   #brain-logo {
+      height: 100%;
+   
+      path {
+         fill: $accent-2;
+      }
+   }
+
+   @include xs {
       display: block;
       height: 100%;
-      flex-grow: 1;
-   }
-}
-
-#brain-logo {
-   height: 100%;
-
-   path {
-      fill: $accent-2;
    }
 }
 
 #navbar-title {
-   margin-right: 20px;
+   margin-left: 20px;
    color: transparent;
    background: linear-gradient(225deg, $accent-2, $accent-1);
    background-clip: text;
    -webkit-background-clip: text;
+   flex-grow: 1;
+
 }
 
 #menu-icon {

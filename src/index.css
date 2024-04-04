@@ -122,28 +122,28 @@
 
 #logo-container {
   display: none;
+  cursor: pointer;
 }
-@media (min-width: 720px) {
+#logo-container #brain-logo {
+  height: 100%;
+}
+#logo-container #brain-logo path {
+  fill: #ff7300;
+}
+@media (min-width: 0px) {
   #logo-container {
     display: block;
     height: 100%;
-    flex-grow: 1;
   }
 }
 
-#brain-logo {
-  height: 100%;
-}
-#brain-logo path {
-  fill: #ff7300;
-}
-
 #navbar-title {
-  margin-right: 20px;
+  margin-left: 20px;
   color: transparent;
   background: linear-gradient(225deg, #ff7300, #fff500);
   background-clip: text;
   -webkit-background-clip: text;
+  flex-grow: 1;
 }
 
 #menu-icon {
@@ -194,6 +194,10 @@
   color: transparent;
   background: inherit;
   padding: 20px 80px;
+}
+
+#blog-view {
+  padding-top: 70px;
 }
 
 #home {
@@ -285,6 +289,7 @@
   display: none;
 }
 #home #latest-blogs .blog {
+  position: relative;
   background-color: rgba(255, 0, 0, 0.35);
   height: 80%;
   width: 85%;
@@ -302,6 +307,14 @@
   font-weight: 500;
   color: #f5f5f5;
   margin-bottom: 20px;
+}
+#home #latest-blogs .blog .button {
+  background: #010101;
+  color: #f5f5f5;
+  padding: 3px 20px;
+  border-radius: 3px;
+  width: max-content;
+  margin: 0px auto;
 }
 #home #latest-blogs .blog-container {
   position: absolute;
@@ -329,6 +342,10 @@
 }
 #services section ul {
   margin-bottom: 40px;
+}
+
+#blogs {
+  padding-top: 70px;
 }
 
 #portfolio {

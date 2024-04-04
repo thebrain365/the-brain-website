@@ -61,7 +61,7 @@ const NavBar = () => {
    return (
          <nav id='navbar'>
             <div id='logo-container' >
-               <BrainLogoSvg handleMenuClicked={ handleMenuClicked }/>
+               <Link to=""><BrainLogoSvg handleMenuClicked={ handleMenuClicked }/></Link>
             </div>
 
             <h1 id='navbar-title' >thebrain.dev</h1>
@@ -72,10 +72,9 @@ const NavBar = () => {
                <menu id='menu' >
                   <div>
                      <Link to="/services" className='menu-item' onClick={ handleMenuClicked } ><li>Services</li></Link>
-                     <Link to="/blogs" className='menu-item' onClick={ handleMenuClicked } ><li>Blogs</li></Link>
                      <Link to="/portfolio" className='menu-item' onClick={ handleMenuClicked } ><li>Portfolio</li></Link>
                      <Link to="/aboutme" className='menu-item' onClick={ handleMenuClicked } ><li>About Me</li></Link>
-                     <Link to="" className='menu-item' onClick={ handleMenuClicked } ><li>Get In Touch</li></Link>
+                     <Link to="/blogs" className='menu-item' onClick={ handleMenuClicked } ><li>Blogs</li></Link>
                   </div>
                </menu>
             </div>
