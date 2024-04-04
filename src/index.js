@@ -8,6 +8,7 @@ import Blogs from './pages/Blogs/Blogs';
 import Services from './pages/Services/Services';
 import AboutMe from './pages/AboutMe/AboutMe';
 import Portfolio from './pages/Portfolio/Portfolio';
+import Blog from './components/Blog/Blog';
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
          <Route path='blogs' element={ <Blogs /> } />
          <Route path='aboutme' element={ <AboutMe /> } />
          <Route path='portfolio' element={ <Portfolio /> } />
+         <Route path='blog/:blogId' element={ <Blog /> } />
       </Route>
    )
 )

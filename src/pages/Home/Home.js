@@ -2,7 +2,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 // import './Home.css'
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import WelcomeBgSvg from '../../assets/icons/WelcomeBgSvg';
 import CallSvgIcon from '../../assets/icons/CallSvgIcon';
 import MailSvgIcon from '../../assets/icons/MailSvgIcon';
@@ -11,31 +12,16 @@ import LinkedInSvgIcon from '../../assets/icons/LinkedInSvgIcon';
 import InstagramSvgIcon from '../../assets/icons/InstagramSvgIcon';
 import TwitterSvgIcon from '../../assets/icons/TwitterSvgIcon';
 import DiscordSvgIcon from '../../assets/icons/DiscordSvgIcon';
+import useFetch from '../../hooks/useFetch';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
+
 
 const Home = () => {
 
    const welcomeMessageTimeline = useRef()
-   const navbarTimeline = useRef()
 
-   let myBlogs = {
-      '1': {
-         'id': 1,
-         'title': 'Why you need data science',
-         'body': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit necessitatibus dolorem dignissimos tempore similique voluptatum!'
-      },
-      '2': {
-         'id': 2,
-         'title': 'How to think of software in the context of your business',
-         'body': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, dicta odio architecto doloribus quidem sapiente iusto molestiae magni sint nobis earum asperiores laboriosam molestias quis excepturi at temporibus possimus aperiam. Illum rerum similique molestiae ipsa facilis commodi? Amet officiis voluptate rem quod sit, voluptatem mollitia commodi error tempora ipsam laboriosam ducimus eos ipsum necessitatibus dolore. Quod nemo ipsam porro voluptatem provident beatae assumenda ea alias nihil maiores odio iusto deleniti illum quam hic sapiente perferendis voluptatum soluta quibusdam tempora atque, rerum nulla omnis? Commodi, at animi exercitationem veritatis doloribus corporis assumenda eveniet dolores ab beatae accusamus ut sapiente fuga error, fugit consectetur, voluptatibus velit recusandae laudantium vero enim autem. Enim quod nemo eos, laboriosam non, vel animi accusantium alias incidunt, iure corrupti ducimus provident. Accusantium saepe nesciunt reiciendis consequuntur, non sequi fugiat adipisci eius modi alias! Sunt voluptatibus quae et, iusto minima officiis alias? Molestiae architecto eligendi eveniet itaque perferendis voluptas libero laudantium. Libero, aut nisi. Nostrum tenetur officia numquam doloribus adipisci fugiat eligendi ipsa eveniet molestiae repellat odio placeat neque nemo, similique atque rerum blanditiis! Quis quidem quam eius.'
-      },
-      '3': {
-         'id': 3,
-         'title': 'Is cyber security mandatory?',
-         'body': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit necessitatibus dolorem dignissimos tempore similique voluptatum!'
-      }
-   }
+   let { data: myBlogs, isPending, error } = useFetch('http://192.168.18.250:1337/api/blogs')
 
    useGSAP(() => { 
       
@@ -97,6 +83,14 @@ const Home = () => {
       }
    }
 
+   const blogHelper = (blog, component) => {
+      if (component === 'title') {
+         return blog.attributes.title
+      } else if (component === 'text') {
+         return blog.attributes.content.find(item => item.type === 'paragraph').children[0].text
+      }
+   }
+
    return (
       <div id='home'>
 
@@ -144,17 +138,23 @@ const Home = () => {
             <h3 className='section-title' >Latest blogs</h3>
             
             <div id="blogs">
+
                {
-                  Object.values(myBlogs).map(blog => (
-                     <div className="blog-container">
-                        <div className='blog' key={ blog.id } >
-                           <h1>{ blog.title.length > 35 ? `${blog.title.substring(0, 35)}...` : blog.title }</h1>
-                           {/* <p>{ blog.body.substring(0, 150) }...</p> */}
-                           <p>{ blog.body.length > 150 ? `${blog.body.substring(0, 150)}...` : blog.body }</p>
+                  myBlogs && 
+
+                  myBlogs.data.map(blog => (
+                     <div className='blog-container'>
+                        <div className='blog' key={ blog.id }>
+                           <h1>{ blogHelper(blog, 'title').length > 35 ? `${blogHelper(blog, 'title').substring(0, 35)}...` : blogHelper(blog, 'title') }</h1>
+                           <p>{ blogHelper(blog, 'text').length > 150 ? `${blogHelper(blog, 'text').substring(0, 150)}...` : blogHelper(blog, 'text') }</p>
+                           <Link to={`/blog/${ blog.id }`} >
+                              <div className='button' typeof='button' >Read more</div>
+                           </Link>
                         </div>
                      </div>
                   ))
                }
+
             </div>
 
          </section>

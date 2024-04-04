@@ -118,6 +118,7 @@
       }
 
       .blog {
+         position: relative;
          background-color: rgba(red, $alpha: .35);
          height: 80%;
          width: 85%;
@@ -135,6 +136,15 @@
             font-weight: 500;
             color: $light;
             margin-bottom: 20px;
+         }
+
+         .button {
+            background: $dark;
+            color: $light;
+            padding: 3px 20px;
+            border-radius: $xs-border-radius;
+            width: max-content;
+            margin: 0px auto;
          }
       }
    
