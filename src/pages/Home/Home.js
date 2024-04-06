@@ -13,16 +13,38 @@ import InstagramSvgIcon from '../../assets/icons/InstagramSvgIcon';
 import TwitterSvgIcon from '../../assets/icons/TwitterSvgIcon';
 import DiscordSvgIcon from '../../assets/icons/DiscordSvgIcon';
 import useFetch from '../../hooks/useFetch';
+import { useQuery, gql } from '@apollo/client';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
+const BLOGS = gql`
+query GetBlogs {
+   blogs {
+     data {
+       id
+       attributes {
+         title
+         content
+         createdAt
+         updatedAt
+         categories {
+           data {
+             attributes {
+               category
+             }
+           }
+         }
+       }
+     }
+   }
+ }
+`
 
 const Home = () => {
 
+   let { data: myBlogs, loading, error } = useQuery(BLOGS)
+
    const welcomeMessageTimeline = useRef()
-
-   let { data: myBlogs, isPending, error } = useFetch('http://192.168.18.250:1337/api/blogs')
-
    useGSAP(() => { 
       
       welcomeMessageTimeline.current = gsap.timeline()
@@ -83,11 +105,37 @@ const Home = () => {
       }
    }
 
+   const whichMonth = givenMonth => {
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+      let result = ''
+      months.forEach((month, index) => {
+         if (givenMonth == index) {
+            result = month
+         }
+      })
+      return result
+   }
+
    const blogHelper = (blog, component) => {
       if (component === 'title') {
          return blog.attributes.title
       } else if (component === 'text') {
          return blog.attributes.content.find(item => item.type === 'paragraph').children[0].text
+      } else if (component === 'categories') {
+         return blog.attributes.categories.data
+      } else if (component === 'datePosted') {
+         let date = new Date(blog.attributes.createdAt)
+         return `${ date.getDay() } ${ whichMonth(date.getMonth()) } ${ date.getFullYear() }`
+      } else if (component === 'timePosted') {
+         let date = new Date(blog.attributes.createdAt)
+         return `${ date.getHours() }:${ date.getMinutes() }`
+      } else if (component === 'dateUpdated') {
+         let date = new Date(blog.attributes.updatedAt)
+         return `${ date.getDay() } ${ whichMonth(date.getMonth()) } ${ date.getFullYear() }`
+      } else if (component === 'timeUpdated') {
+         let date = new Date(blog.attributes.updatedAt)
+         return `${ date.getHours() }:${ date.getMinutes() }`
       }
    }
 
@@ -142,14 +190,36 @@ const Home = () => {
                {
                   myBlogs && 
 
-                  myBlogs.data.map(blog => (
+                  myBlogs.blogs.data.map(blog => (
                      <div className='blog-container'>
                         <div className='blog' key={ blog.id }>
+                           <div className='category-container'>
+                              {
+                                 blogHelper(blog, 'categories').map(categoryItem => (
+                                    <span className='category'>{ categoryItem.attributes.category }</span>
+                                 ))
+                              }
+                           </div>
                            <h1>{ blogHelper(blog, 'title').length > 35 ? `${blogHelper(blog, 'title').substring(0, 35)}...` : blogHelper(blog, 'title') }</h1>
                            <p>{ blogHelper(blog, 'text').length > 150 ? `${blogHelper(blog, 'text').substring(0, 150)}...` : blogHelper(blog, 'text') }</p>
                            <Link to={`/blog/${ blog.id }`} >
                               <div className='button' typeof='button' >Read more</div>
                            </Link>
+                           <div className="dates">
+                              <span className="date-container">
+                                 <span className='dateLabel updated'>updated on : </span>
+                                 {
+                                    blogHelper(blog, 'datePosted') != blogHelper(blog, 'dateUpdated') &&
+                                    blogHelper(blog, 'timePosted') != blogHelper(blog, 'timeUpdated') && 
+                                    <span className='date updated'>{ blogHelper(blog, 'dateUpdated') } | { blogHelper(blog, 'timeUpdated') }</span>
+                                 }
+                              </span>
+                              <br />
+                              <span className="date-container">
+                                 <span className='dateLabel posted'>created on : </span>
+                                 <span className='date posted'>{ blogHelper(blog, 'datePosted') } | { blogHelper(blog, 'timePosted') }</span>
+                              </span>
+                           </div>
                         </div>
                      </div>
                   ))
@@ -189,7 +259,7 @@ const Home = () => {
             </div>
 
             <div id='service-3' className='service' >
-               <h1 className='heading'>Data Analytics</h1>
+               <h1 className='heading'>Quant</h1>
                <div className='list'>
                   <span>Statistical Analysis</span>
                   <span>Data Visualisation</span>

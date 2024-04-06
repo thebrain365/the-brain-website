@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 import App from './App';
 import Home from './pages/Home/Home';
 import Blogs from './pages/Blogs/Blogs';
@@ -9,6 +10,11 @@ import Services from './pages/Services/Services';
 import AboutMe from './pages/AboutMe/AboutMe';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Blog from './components/Blog/Blog';
+
+const client = new ApolloClient({
+   uri: 'http://192.168.18.250:1337/graphql',
+   cache: new InMemoryCache(),
+ });
 
 const router = createBrowserRouter(
    createRoutesFromElements(
@@ -26,6 +32,8 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <RouterProvider router={ router } />
+      <ApolloProvider client={client}>
+         <RouterProvider router={ router } />
+      </ApolloProvider>
   </React.StrictMode>
 );

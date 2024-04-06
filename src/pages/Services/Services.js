@@ -28,6 +28,7 @@ const Services = () => {
                <h4 className='sub-heading'>Programming Languages</h4>
                <div className='list'>
                   <span>Java (SE & EE)</span>
+                  <span>C++</span>
                   <span>JavaScript</span>
                   <span>Python</span>
                   <span>HTML/CSS</span>
@@ -97,12 +98,14 @@ const Services = () => {
 
          <section id='data-analytics' className="service" >
 
-            <h1 className='section-title' >Data Science and Machine Learning</h1>
+            <h1 className='section-title' >Quant</h1>
 
             <div className='service-description' >
+               <h2 className="heading">Quantitative Analyst</h2>
                <p>
                   I possess a strong foundation in data analysis, spanning data framing, exploration, interpretation, modeling, and visualization. I have honed my ability to structure datasets effectively, explore patterns and relationships, and derive actionable insights.
                </p>
+               <h2 className="heading">Quantitative Developer</h2>
                <p>
                   My experience includes employing statistical methods and visualization tools to uncover insights, interpret findings, and communicate results effectively. Additionally, I've delved into various modeling techniques, including regression analysis and machine learning to make informed predictions and drive decision-making processes.
                </p>

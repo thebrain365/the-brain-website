@@ -1,3 +1,72 @@
-// #blogs {
-//    padding-top: $navbar-height;
-// }
+#blogs-page {
+   padding-top: $navbar-height + ($navbar-height * 0.7);
+
+   #toolbar {
+      background-color: rgba(red, $alpha: .55);
+      height: 50px;
+      margin-bottom: 60px;
+      text-wrap: nowrap;
+      border-radius: $md-border-radius;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      box-shadow: 0px 15px 45px 0px rgba($dark, $alpha: .7);
+
+      label {
+         color: $light;
+      }
+
+      #search-blog {
+         outline: none;
+         border: none;
+         height: 85%;
+         width: 70%;
+         padding: 0px 15px;
+         border-radius: $md-border-radius;
+      }
+
+      #search-box {
+         height: 100%;
+         width: 100%;
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+      }
+      svg {
+         height: 60%;
+      }
+   }
+
+   .blog {
+      height: 70svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: $navbar-height;
+      padding: 0px 10px;
+      background-color: rgba(red, $alpha: .35);
+      text-align: center;
+      text-shadow: none;
+      border-radius: $md-border-radius;
+      padding: 50px 20px;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      box-shadow: 0px 15px 45px 0px rgba($dark, $alpha: .7);
+
+      h1 {
+         font-size: 1.2em;
+         font-weight: 500;
+         color: $light;
+         margin-bottom: 20px;
+      }
+
+      .button {
+         background: $dark;
+         color: $light;
+         padding: 3px 20px;
+         border-radius: $xs-border-radius;
+         width: max-content;
+         margin: 0px auto;
+      }
+   }
+}
