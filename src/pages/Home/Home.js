@@ -193,18 +193,8 @@ const Home = () => {
                   myBlogs.blogs.data.map(blog => (
                      <div className='blog-container'>
                         <div className='blog' key={ blog.id }>
-                           <div className='category-container'>
-                              {
-                                 blogHelper(blog, 'categories').map(categoryItem => (
-                                    <span className='category'>{ categoryItem.attributes.category }</span>
-                                 ))
-                              }
-                           </div>
                            <h1>{ blogHelper(blog, 'title').length > 35 ? `${blogHelper(blog, 'title').substring(0, 35)}...` : blogHelper(blog, 'title') }</h1>
                            <p>{ blogHelper(blog, 'text').length > 150 ? `${blogHelper(blog, 'text').substring(0, 150)}...` : blogHelper(blog, 'text') }</p>
-                           <Link to={`/blog/${ blog.id }`} >
-                              <div className='button' typeof='button' >Read more</div>
-                           </Link>
                            <div className="dates">
                               <span className="date-container">
                                  <span className='dateLabel updated'>updated on : </span>
@@ -220,6 +210,16 @@ const Home = () => {
                                  <span className='date posted'>{ blogHelper(blog, 'datePosted') } | { blogHelper(blog, 'timePosted') }</span>
                               </span>
                            </div>
+                           <div className='category-container'>
+                              {
+                                 blogHelper(blog, 'categories').map(categoryItem => (
+                                    <span className='category'>{ categoryItem.attributes.category }</span>
+                                 ))
+                              }
+                           </div>
+                           <Link to={`/blog/${ blog.id }`} >
+                              <div className='button' typeof='button' >Read more</div>
+                           </Link>
                         </div>
                      </div>
                   ))
