@@ -2,6 +2,8 @@
    padding-top: $navbar-height + ($navbar-height * 0.7);
 
    #toolbar {
+      position: relative;
+      z-index: 1;
       background-color: rgba(red, $alpha: .55);
       height: 50px;
       margin-bottom: 60px;
@@ -33,6 +35,31 @@
       }
       svg {
          height: 60%;
+      }
+
+      #filter-menu {
+         position: absolute;
+         top: 65px;
+         right: 30px;
+         padding: 10px 30px;
+         background-color: aquamarine;
+         text-shadow: none;
+         text-align: center;
+         border-radius: $xs-border-radius;
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+
+         select {
+            border: none;
+            padding: 5px;
+         }
+
+         // #filter-by-time {
+         //    background-color: beige;
+         //    padding: 5px;
+         //    border-radius: $xs-border-radius;
+         // }
       }
    }
 
