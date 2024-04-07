@@ -1,16 +1,24 @@
 // import './Footer.css'
+import CallSvgIcon from '../../assets/icons/CallSvgIcon';
+import MailSvgIcon from '../../assets/icons/MailSvgIcon';
+import GitHubSvgIcon from '../../assets/icons/GitHubSvgIcon';
+import LinkedInSvgIcon from '../../assets/icons/LinkedInSvgIcon';
+import InstagramSvgIcon from '../../assets/icons/InstagramSvgIcon';
+import TwitterSvgIcon from '../../assets/icons/TwitterSvgIcon';
+import DiscordSvgIcon from '../../assets/icons/DiscordSvgIcon';
 
 const Footer = () => {
    return (
       <footer>
-         <h2>Get in touch</h2>
-         <ul>
-            <li>email: muano.m365@thebrain.dev</li>
-            <li>mobile: 081 429 4499</li>
-            <li>IG: thebrain.dev</li>
-            <li>github: thebrain.dev</li>
-            <li>LinkedIn: Muano Makhokha</li>
-         </ul>
+         <div id='footer'>
+            <CallSvgIcon />
+            <MailSvgIcon />
+            <GitHubSvgIcon />
+            <LinkedInSvgIcon />
+            <TwitterSvgIcon />
+            <InstagramSvgIcon />
+            <DiscordSvgIcon />
+         </div>
       </footer>
    );
 }

@@ -2,6 +2,8 @@
    padding-top: $navbar-height + ($navbar-height * 0.7);
 
    #toolbar {
+      position: relative;
+      z-index: 1;
       background-color: rgba(red, $alpha: .55);
       height: 50px;
       margin-bottom: 60px;
@@ -34,6 +36,31 @@
       svg {
          height: 60%;
       }
+
+      #filter-menu {
+         position: absolute;
+         top: 65px;
+         right: 30px;
+         padding: 10px 30px;
+         background-color: aquamarine;
+         text-shadow: none;
+         text-align: center;
+         border-radius: $xs-border-radius;
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+
+         select {
+            border: none;
+            padding: 5px;
+         }
+
+         // #filter-by-time {
+         //    background-color: beige;
+         //    padding: 5px;
+         //    border-radius: $xs-border-radius;
+         // }
+      }
    }
 
    .blog {
@@ -60,13 +87,54 @@
          margin-bottom: 20px;
       }
 
+      .category-container {
+         text-align: start;
+         
+         .category {
+            font-size: $xs-font-size;
+            color: $accent-3;
+            background-color: $dark;
+            padding: 5px 8px;
+            margin-left: 8px;
+            text-align: center;
+            border-radius: $xs-border-radius;
+         }
+      }
+
       .button {
          background: $dark;
          color: $light;
          padding: 3px 20px;
+         padding-bottom: 4px;
          border-radius: $xs-border-radius;
          width: max-content;
          margin: 0px auto;
+         position: absolute;
+         bottom: -24px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+
+      .dates {
+         line-height: 100%;
+         color: $light;
+         background-color: rgba($dark, $alpha: 1);
+         text-align: left;
+         text-wrap: nowrap;
+         border-radius: $xs-border-radius;
+         padding: 0px 25px;
+      }
+
+      .dateLabel {
+         font-size: $xs-font-size * 0.8;
+      }
+
+      .date {
+         font-size: $sm-font-size * 0.8;
+      }
+
+      .updated {
+         color: $accent-3;
       }
    }
 }
